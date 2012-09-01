@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/rob/Sites/job-numbers'
 let g:netrw_dirhist_2='/Users/rob/Sites/job-numbers/web'
+let g:netrw_dirhist_3='/Users/rob/Documents/KB'
+let g:netrw_dirhist_4='/Users/rob/Sites/tyrrells/potato-game'
