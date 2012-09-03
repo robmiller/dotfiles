@@ -79,6 +79,9 @@ set formatoptions=qrn1
 set list
 set listchars=tab:▸\ ,eol:¬
 
+" Space in normal mode centres the screen on the current line
+nmap <space> zz
+
 " Unmap arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
