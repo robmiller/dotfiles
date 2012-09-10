@@ -13,6 +13,8 @@ set autoindent
 set shiftwidth=4
 " Always indent to a multiple of shiftwidth
 set shiftround
+" This is here to wrap Git commit messages to 72 chars.
+filetype indent plugin on
 
 " Display when in insert/visual/replace mode in the status bar
 set showmode
@@ -71,8 +73,8 @@ vnoremap <tab> %
 
 " Soft-wrap text
 set wrap
-" Wrap at 79 chars wide
-set textwidth=79
+" Wrap at 72 chars wide
+set textwidth=72
 set formatoptions=qrn1
 
 " Display invisibles
@@ -105,8 +107,11 @@ nnoremap <leader>a :Ack
 nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 " comma-q: hard-wrap current paragraph
 nnoremap <leader>q gqip
+" comma-w: hard-wrap current line as though it was a paragraph
+nnoremap <leader>w o<ESC>kgqip}dd
 " comma-v: select the just-pasted text
 nnoremap <leader>v V`]
 " comma-=: align assignments in current block
 nnoremap <leader>= :Tab /=<CR>
-
+" comma-[: put array element on a new line
+nnoremap <leader>[ f,a<CR><ESC>
