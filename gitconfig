@@ -1,0 +1,73 @@
+[user]
+	name = Rob Miller
+	email = rob@bigfish.co.uk
+[core]
+	excludesfile = /Users/rob/.gitignore
+	quotepath = false
+	pager = less -x4
+
+[color]
+      branch = auto
+      diff = auto
+      status = auto
+
+[color "branch"]
+      current = yellow reverse
+      local = yellow
+      remote = green
+
+[color "diff"]
+      meta = yellow bold
+      frag = magenta bold
+      old = red bold
+      new = green bold
+
+[color "status"]
+      added = yellow
+      changed = green
+      untracked = cyan
+
+[alias]
+    st = status -sb
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff --color-words
+    dc = diff --cached
+    lp = log -p --abbrev-commit --color-words
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = log --stat --abbrev-commit
+    l = log --oneline --abbrev-commit 
+    lg = log --abbrev-commit --decorate
+    ds = diff --stat
+
+	unstage = reset HEAD
+
+    # Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
+
+[branch]
+	autosetupmerge = true
+[push]
+	default = tracking
+[diff]
+	tool = Kaleidoscope
+[merge]
+	conflictstyle = diff3
+    tool = araxis
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	keepBackup = true
