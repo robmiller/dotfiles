@@ -58,16 +58,15 @@
 
 [branch]
 	autosetupmerge = true
+
 [push]
 	default = tracking
+
 [diff]
 	tool = Kaleidoscope
+
 [merge]
 	conflictstyle = diff3
-    tool = araxis
-[difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-	prompt = false
+
 [mergetool]
 	keepBackup = true
