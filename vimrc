@@ -77,10 +77,6 @@ set wrap
 set textwidth=72
 set formatoptions=qrn1
 
-" Display invisibles
-set list
-set listchars=tab:▸\ ,eol:¬
-
 " Space in normal mode centres the screen on the current line
 nmap <space> zz
 
