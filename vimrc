@@ -99,6 +99,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" In insert mode, double-tap J to enter command mode.
+inoremap jj <ESC>
+
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " comma-A: start an Ack search
