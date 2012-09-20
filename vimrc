@@ -54,6 +54,10 @@ call pathogen#infect()
 nnoremap / /\v
 vnoremap / /\v
 
+" Display invisibles
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
 set ignorecase
