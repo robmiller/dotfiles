@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="rob"
+ZSH_THEME="blinks"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -40,12 +40,31 @@ function webdev_mysql() {
   ssh -f -L 3306:localhost:3306 webdev.bigfish.co.uk -N
 }
 
+function scratch() {
+	if [ -f ~/Dropbox/Elements/Scratchpad.txt ]; then
+		vim ~/Dropbox/Elements/Scratchpad.txt
+	fi
+}
+
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    bg
+    zle redisplay
+  else
+    zle push-input
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 alias git='nocorrect git'
 
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.5/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
 source ~/.z.sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Customize to your needs...
 export PATH=/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:/Users/rob/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Developer/usr/bin:/Users/rob/pear/bin:/usr/local/sbin
