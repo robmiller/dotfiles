@@ -56,7 +56,10 @@ vnoremap / /\v
 
 " Display invisibles
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
+
+" We're using a 256 colour terminal.
+set t_Co=256
 
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
