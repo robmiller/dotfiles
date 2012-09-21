@@ -62,7 +62,7 @@ alias git='nocorrect git'
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.5/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
-source ~/.z.sh
+[[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
