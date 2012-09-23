@@ -60,7 +60,7 @@ bindkey '^Z' fancy-ctrl-z
 alias git='nocorrect git'
 
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.5/bin/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export LESS=' -RFX '
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
