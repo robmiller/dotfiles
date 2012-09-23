@@ -2,7 +2,7 @@
 	name = Rob Miller
 	email = rob@bigfish.co.uk
 [core]
-	excludesfile = /Users/rob/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
 	pager = less -x4
 
