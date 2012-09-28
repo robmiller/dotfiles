@@ -67,6 +67,7 @@
 
 [merge]
 	conflictstyle = diff3
+	summary = true
 
 [mergetool]
 	keepBackup = true
