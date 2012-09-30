@@ -44,12 +44,10 @@ export LESS=' -RFX '
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# Disable newlines in quoted strings. In practice, I find that this
-# happens way more often when I fail to match a quote than it does when
-# I actually want a newline. This option needs to be set late, since
-# other scripts don't agree with me.
-setopt cshjunkiequotes
-
 # Customize to your needs...
 export PATH=/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:/Users/rob/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Developer/usr/bin:/Users/rob/pear/bin:/usr/local/sbin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
