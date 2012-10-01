@@ -12,6 +12,8 @@ unsetopt correct_all
 setopt correct
 # Change to a directory just by typing its name.
 setopt autocd
+# Use more powerful globbing
+setopt extended_glob
 
 function webdev_mysql() {
   echo "Killing existing connection (sudo)..."
