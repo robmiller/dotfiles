@@ -28,6 +28,14 @@ function scratch() {
 	fi
 }
 
+function spaces_to_tabs() {
+	sed -i '' -E "s/    /       /g" **/*(.)
+}
+
+function strip_trailing_whitespace() {
+	sed -i '' -E "s/[[:space:]]*$//" **/*(.)
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
