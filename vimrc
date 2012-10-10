@@ -121,3 +121,5 @@ nnoremap <leader>v V`]
 nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
 nnoremap <leader>[ f,a<CR><ESC>
+" comma-t: toggle TagBar, a plugin that displays ctags in a sidebar
+nnoremap <leader>t :TagbarToggle<CR>
