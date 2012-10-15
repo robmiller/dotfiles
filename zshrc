@@ -50,6 +50,7 @@ bindkey '^Z' fancy-ctrl-z
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey -M viins 'jj' vi-cmd-mode
 
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.5/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -RFX '
