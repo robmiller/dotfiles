@@ -36,6 +36,11 @@ function strip_trailing_whitespace() {
 	sed -i '' -E "s/[[:space:]]*$//" **/*(.)
 }
 
+# Count the significant lines of code in the current directory.
+function sloc() {
+	grep -v '^$' **.(js|php) | grep -v '//' | wc -l
+}
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
