@@ -42,6 +42,7 @@
     lg = log --abbrev-commit --decorate
     ds = diff --stat
 
+	log-merges = log --abbrev-commit --decorate --merges --first-parent
 	unstage = reset HEAD
 
     # Show files ignored by git:
