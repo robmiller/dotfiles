@@ -38,15 +38,19 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = log --stat --abbrev-commit
-    l = log --oneline --abbrev-commit 
+    l = log --oneline --abbrev-commit
     lg = log --abbrev-commit --decorate
     ds = diff --stat
 	code-review = !zsh -c 'git difftool origin/master... **/*.(php|js|rb|html|scss|css)'
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
 	unstage = reset HEAD
 
-    # Show files ignored by git:
-    ign = ls-files -o -i --exclude-standard
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+
+	# Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
