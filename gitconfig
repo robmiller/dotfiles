@@ -7,40 +7,40 @@
 	pager = less -x4
 
 [color]
-      branch = auto
-      diff = auto
-      status = auto
+	  branch = auto
+	  diff = auto
+	  status = auto
 
 [color "branch"]
-      current = yellow reverse
-      local = yellow
-      remote = green
+	  current = yellow reverse
+	  local = yellow
+	  remote = green
 
 [color "diff"]
-      meta = yellow
-      frag = magenta
-      old = red
-      new = green
+	  meta = yellow
+	  frag = magenta
+	  old = red
+	  new = green
 
 [color "status"]
-      added = yellow
-      changed = green
-      untracked = cyan
+	  added = yellow
+	  changed = green
+	  untracked = cyan
 
 [alias]
-    st = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff --color-words
-    dc = diff --cached
-    lp = log -p --abbrev-commit --color-words
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls = log --stat --abbrev-commit
-    l = log --oneline --abbrev-commit
-    lg = log --abbrev-commit --decorate
-    ds = diff --stat
+	st = status -sb
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff --color-words
+	dc = diff --cached
+	lp = log -p --abbrev-commit --color-words
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = log --stat --abbrev-commit
+	l = log --oneline --abbrev-commit
+	lg = log --abbrev-commit --decorate
+	ds = diff --stat
 	code-review = !zsh -c 'git difftool origin/master... **/*.(php|js|rb|html|scss|css)'
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
 	unstage = reset HEAD
