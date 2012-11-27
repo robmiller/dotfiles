@@ -56,6 +56,8 @@
 	dl = "!git lg -p -1"
 	diffc = diff --cached
 
+	pusha = push --all
+
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
