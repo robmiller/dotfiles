@@ -46,6 +46,8 @@ function compile_compass() {
 	ls -d1 **/.sass-cache/../ | xargs -L1 compass compile --force -s compressed
 }
 
+alias lsl="ls -ahl"
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
