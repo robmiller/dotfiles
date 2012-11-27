@@ -41,7 +41,8 @@
 	l = log --oneline --abbrev-commit
 	lg = log --abbrev-commit --decorate
 	ds = diff --stat
-	code-review = !zsh -c 'git difftool origin/master... **/*.(php|js|rb|html|scss|css)'
+
+	code-review = difftool origin/master...
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
 	unstage = reset HEAD
 
