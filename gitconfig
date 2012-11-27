@@ -53,6 +53,9 @@
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
+	dl = "!git lg -p -1"
+	diffc = diff --cached
+
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
