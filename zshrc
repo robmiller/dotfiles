@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="blinks"
 
-plugins=(git osx ruby battery github sublime)
+plugins=(osx ruby battery github sublime)
 
 source $ZSH/oh-my-zsh.sh
 
