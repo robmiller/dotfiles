@@ -15,6 +15,9 @@ setopt autocd
 # Use more powerful globbing
 setopt extended_glob
 
+# zmv is a pattern-based file renaming module.
+autoload -U zmv
+
 function webdev_mysql() {
   echo "Killing existing connection (sudo)..."
   sudo lsof -Pnl +M -i @127.0.0.1:3306 | awk '/[0-9]/ {print $2}' | xargs sudo kill
