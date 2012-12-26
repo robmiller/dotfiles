@@ -90,6 +90,9 @@ set wrap
 set textwidth=72
 set formatoptions=qrn1
 
+" Set .md files to Markdown syntax
+au BufNewFile,BufRead *.md set filetype=markdown
+
 " Space in normal mode centres the screen on the current line
 nmap <space> zz
 
