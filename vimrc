@@ -61,8 +61,8 @@ set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\
 " Folding
 " Start with all folds collapsed
 set foldlevelstart=0
-nnoremap <CR> za
-vnoremap <CR> za
+nnoremap + za
+vnoremap + za
 
 " We're using a 256 colour terminal.
 set t_Co=256
