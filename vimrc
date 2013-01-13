@@ -87,8 +87,8 @@ set hlsearch
 set gdefault
 " Highlight matching brackets
 set showmatch
-" Type comma-space to clear search highlighting
-nnoremap <leader><space> :noh<cr>
+" Ctrl-L to clear search highlighting
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 " Use tab to move through matching brackets/braces
 nnoremap <tab> %
 vnoremap <tab> %
