@@ -52,6 +52,10 @@ set relativenumber
 set backspace=indent,eol,start
 set laststatus=2
 
+" Make the behaviour of Y the same as C and D (i.e. yank to the end of
+" the line rather than yanking the whole line).
+nnoremap Y y$
+
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
 
