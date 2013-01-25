@@ -53,6 +53,8 @@
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
+	delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
 	dl = "!git lg -p -1"
 	diffc = diff --cached
 
