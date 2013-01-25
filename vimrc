@@ -5,6 +5,9 @@ set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
 
+" Pathogen is the nicest way to load plugins
+call pathogen#infect()
+
 " Tabs are four spaces wide
 set tabstop=4
 " Newlines should start at the same level as the line above
@@ -50,9 +53,6 @@ set laststatus=2
 " Make the behaviour of Y the same as C and D (i.e. yank to the end of
 " the line rather than yanking the whole line).
 nnoremap Y y$
-
-" Pathogen is the nicest way to load plugins
-call pathogen#infect()
 
 " Always use Perl-style regular expressions
 nnoremap / /\v
