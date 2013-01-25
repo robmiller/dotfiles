@@ -5,11 +5,6 @@ set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
 
-" Enable hard mode by default
-autocmd VimEnter,BufNewFile,BufReadPost * call HardMode()
-nnoremap <leader>h <Esc>:call EasyMode()<CR>
-nnoremap <leader>H <Esc>:call HardMode()<CR>
-
 " Tabs are four spaces wide
 set tabstop=4
 " Newlines should start at the same level as the line above
