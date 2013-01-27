@@ -67,6 +67,11 @@ if exists('+undofile')
   set undofile
 endif
 
+" Load matchit.vim
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
 " Underline the current line
 set cursorline
 " Display the cursor's location in the file in the bottom right
