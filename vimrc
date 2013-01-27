@@ -37,8 +37,24 @@ set scrolloff=3
 set visualbell
 " For better redrawing, allegedly
 set ttyfast
-" Maintain a persistent undo file
-set undofile
+
+" A more sensible undofile structure, taken from Tim Pope's
+" sensible.vim
+let s:dir = has('win32') ? '~/Application Data/Vim' : has('mac') ? '~/Library/Vim' : '~/.local/share/vim'
+if isdirectory(expand(s:dir))
+  if &directory =~# '^\.,'
+    let &directory = expand(s:dir) . '/swap//,' . &directory
+  endif
+  if &backupdir =~# '^\.,'
+    let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
+  endif
+  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
+    let &undodir = expand(s:dir) . '/undo//,' . &undodir
+  endif
+endif
+if exists('+undofile')
+  set undofile
+endif
 
 " Underline the current line
 set cursorline
