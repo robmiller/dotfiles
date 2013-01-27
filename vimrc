@@ -38,6 +38,12 @@ set visualbell
 " For better redrawing, allegedly
 set ttyfast
 
+" If files are modified outside Vim, read them automatically
+set autoread
+" Save files when switching buffers etc.
+set autowrite
+set fileformats+=mac
+
 " A more sensible undofile structure, taken from Tim Pope's
 " sensible.vim
 let s:dir = has('win32') ? '~/Application Data/Vim' : has('mac') ? '~/Library/Vim' : '~/.local/share/vim'
