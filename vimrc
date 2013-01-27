@@ -44,6 +44,11 @@ set autoread
 set autowrite
 set fileformats+=mac
 
+" Exclude hidden files from the file browser
+if !exists('g:netrw_list_hide')
+	let g:netrw_list_hide = '^\.,\~$,^tags$'
+endif
+
 " A more sensible undofile structure, taken from Tim Pope's
 " sensible.vim
 let s:dir = has('win32') ? '~/Application Data/Vim' : has('mac') ? '~/Library/Vim' : '~/.local/share/vim'
