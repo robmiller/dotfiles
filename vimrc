@@ -54,6 +54,9 @@ set laststatus=2
 " the line rather than yanking the whole line).
 nnoremap Y y$
 
+" Toggle the Tagbar plugin, a sidebar with a list of ctags
+nmap T :TagbarToggle<CR>
+
 " Always use Perl-style regular expressions
 nnoremap / /\v
 vnoremap / /\v
