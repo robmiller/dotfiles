@@ -87,7 +87,7 @@ set laststatus=2
 nnoremap Y y$
 
 " Toggle the Tagbar plugin, a sidebar with a list of ctags
-nmap T :TagbarToggle<CR>
+nnoremap T :TagbarToggle<CR>
 
 " Always use Perl-style regular expressions
 nnoremap / /\v
@@ -133,7 +133,7 @@ set formatoptions=qrn1
 au BufNewFile,BufRead *.md set filetype=markdown
 
 " Space in normal mode centres the screen on the current line
-nmap <space> zz
+nnoremap <space> zz
 
 " Unmap arrow keys
 nnoremap <up> <nop>
