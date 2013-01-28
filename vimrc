@@ -178,3 +178,9 @@ nnoremap gp `[v`]
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+" comma-c: comment out the current line
+augroup comment_line
+	autocmd!
+	autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
+augroup END
