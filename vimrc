@@ -174,3 +174,7 @@ nnoremap <leader>[ f,a<CR><ESC>
 nnoremap <leader>t :TagbarToggle<CR>
 " Select just-pasted text
 nnoremap gp `[v`]
+
+" Commands for quickly editing and reloading this file
+nnoremap <leader>ev :sp $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
