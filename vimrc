@@ -184,3 +184,9 @@ augroup comment_line
 	autocmd!
 	autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
 augroup END
+
+" Add a movement for selecting variables in PHP files
+augroup select_variable
+	autocmd!
+	autocmd FileType php onoremap av :<c-u>execute "normal! eF$v/\\v.\\@=(\\s\|\\=\|,\|;)\r\e:nohl\rvF$"<CR>
+augroup END
