@@ -4,6 +4,7 @@ syntax on
 set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
+let maplocalleader = ","
 
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
