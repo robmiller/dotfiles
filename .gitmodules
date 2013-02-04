@@ -55,3 +55,9 @@
 [submodule "vim/bundle/vim-movar"]
 	path = vim/bundle/vim-movar
 	url = git@github.com:robmiller/vim-movar.git
+[submodule "vim/bundle/vim-scriptease"]
+	path = vim/bundle/vim-scriptease
+	url = git://github.com/tpope/vim-scriptease.git
+[submodule "vim/bundle/vim-reload"]
+	path = vim/bundle/vim-reload
+	url = https://github.com/xolox/vim-reload.git
