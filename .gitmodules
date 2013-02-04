@@ -61,3 +61,6 @@
 [submodule "vim/bundle/vim-reload"]
 	path = vim/bundle/vim-reload
 	url = https://github.com/xolox/vim-reload.git
+[submodule "vim/bundle/vim-seek"]
+	path = vim/bundle/vim-seek
+	url = https://github.com/goldfeld/vim-seek.git
