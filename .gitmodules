@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
