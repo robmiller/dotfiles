@@ -76,3 +76,4 @@ export PATH=/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
