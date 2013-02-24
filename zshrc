@@ -51,6 +51,8 @@ function compile_compass() {
 
 alias lsl="ls -ahl"
 
+[[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
+
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
     bg
