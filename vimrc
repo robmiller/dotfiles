@@ -134,6 +134,8 @@ set formatoptions=qrn1
 au BufNewFile,BufRead *.md set filetype=markdown
 " Set .twig files to HTML Jinja syntax (it's what Twig is based on)
 au BufNewFile,BufRead *.twig set filetype=jinja
+" Capistrano's Capfiles are just Ruby
+au BufNewFile,BufRead Capfile set filetype=ruby
 
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
