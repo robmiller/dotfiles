@@ -46,7 +46,7 @@ function sloc() {
 
 # Compile Compass, making a guess about what directory to compile in.
 function compile_compass() {
-	ls -d **/s(c|a)ss/../ | xargs -n 1 compass compile --force
+	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
 }
 
 alias lsl="ls -ahl"
