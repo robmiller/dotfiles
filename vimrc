@@ -9,6 +9,14 @@ let maplocalleader = ","
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
 
+" Load Powerline
+if isdirectory(expand('~/.local/lib/python2.7/site-packages/powerline/bindings/vim'))
+	set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+endif
+if isdirectory(expand('~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim'))
+	set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+endif
+
 " Tabs are four spaces wide
 set tabstop=4
 " Newlines should start at the same level as the line above
