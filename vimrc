@@ -6,6 +6,9 @@ set encoding=utf-8
 let mapleader = ","
 let maplocalleader = ","
 
+set mouse=a
+set background=dark
+colorscheme solarized
 
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
