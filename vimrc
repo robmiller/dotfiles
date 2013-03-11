@@ -6,14 +6,6 @@ set encoding=utf-8
 let mapleader = ","
 let maplocalleader = ","
 
-" When starting vim, check for a session file and, if there is one, load
-" it up.
-augroup sourcesession
-	autocmd!
-	if argc() == 0 && filereadable('Session.vim')
-		autocmd VimEnter * nested :source Session.vim
-	endif
-augroup END
 
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
