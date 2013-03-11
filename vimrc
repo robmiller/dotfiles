@@ -148,6 +148,8 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.twig set filetype=jinja
 " Capistrano's Capfiles are just Ruby
 au BufNewFile,BufRead Capfile set filetype=ruby
+" Gitconfigs
+au BufNewFile,BufRead *gitconfig set filetype=gitconfig
 
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
