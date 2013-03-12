@@ -172,6 +172,21 @@ vnoremap <F1> <ESC>
 " In insert mode, double-tap J to enter command mode.
 inoremap jj <ESC>
 
+" Some mappings for tabs: Cmd + number selects a particular tab
+map <D-S-]> gt
+map <D-S-[> gT
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+" ...and Cmd + 0 selects the final tab
+map <D-0> :tablast<CR>
+
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " comma-A: start an Ack search
