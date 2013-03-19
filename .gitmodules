@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim-obsession"]
 	path = vim/bundle/vim-obsession
 	url = git@github.com:robmiller/vim-obsession.git
+[submodule "vim/bundle/dwm"]
+	path = vim/bundle/dwm
+	url = git://github.com/spolu/dwm.vim.git
