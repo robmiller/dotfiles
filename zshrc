@@ -44,6 +44,11 @@ function sloc() {
 	grep -v '^$' **.(js|php) | grep -v '//' | wc -l
 }
 
+# Copy the last-run command to the clipboard
+function clc() {
+	fc -ln -1 | tr -d '\n' | pbcopy
+}
+
 # Compile Compass, making a guess about what directory to compile in.
 function compile_compass() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
