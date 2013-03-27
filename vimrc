@@ -131,7 +131,7 @@ set gdefault
 " Highlight matching brackets
 set showmatch
 " Ctrl-L to clear search highlighting
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <silent> <cr> :nohlsearch<CR>
 " Use tab to move through matching brackets/braces
 nnoremap <tab> %
 vnoremap <tab> %
