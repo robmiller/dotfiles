@@ -77,6 +77,8 @@ bindkey -M viins 'jj' vi-cmd-mode
 export LESSOPEN="| /usr/local/Cellar/source-highlight/3.1.5/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -RFX '
 
+export EDITOR='vim'
+
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
 export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:~/bin:/usr/X11/bin:/Developer/usr/bin:~/pear/bin:/usr/local/sbin:$HOME/.rvm.bin:/usr/bin:/bin:/usr/sbin:/sbin:
