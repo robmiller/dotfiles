@@ -79,6 +79,9 @@ export LESS=' -RFX '
 
 export EDITOR='vim'
 
+# Always show Ruby warnings
+export RUBYOPT="w"
+
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
 export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:~/bin:/usr/X11/bin:/Developer/usr/bin:~/pear/bin:/usr/local/sbin:$HOME/.rvm.bin:/usr/bin:/bin:/usr/sbin:/sbin:
