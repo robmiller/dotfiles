@@ -85,6 +85,8 @@ export EDITOR='vim'
 
 # Always show Ruby warnings
 export RUBYOPT="w"
+# ...except for Homebrew
+alias brew="RUBYOPT=''; brew"
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
