@@ -69,6 +69,10 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
