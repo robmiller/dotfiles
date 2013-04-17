@@ -151,6 +151,11 @@ au BufNewFile,BufRead Capfile set filetype=ruby
 " Gitconfigs
 au BufNewFile,BufRead *gitconfig set filetype=gitconfig
 
+autocmd FileType ruby
+	\ setlocal shiftwidth=2 |
+	\ setlocal tabstop=2 |
+	\ setlocal expandtab
+
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
 
