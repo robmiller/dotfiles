@@ -44,6 +44,12 @@
 
 	code-review = difftool origin/master...
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
+
+	merge-span = "!f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
+	merge-log = "!git log `git merge-span .. $1`"
+	merge-diff = "!git diff `git merge-span ... $1`"
+	merge-difftool = "!git difftool `git merge-span ... $1`"
+
 	unstage = reset HEAD
 
 	assume = update-index --assume-unchanged
@@ -61,6 +67,8 @@
 	oldest-ancestor = !zsh -c 'diff -u <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
 
 	pusha = push --all
+
+	merge = merge --no-ff --no-commit 
 
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
