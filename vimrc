@@ -156,6 +156,8 @@ autocmd FileType ruby
 	\ setlocal tabstop=2 |
 	\ setlocal expandtab
 
+autocmd FileType gitcommit set colorcolumn=72 spell
+
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
 
