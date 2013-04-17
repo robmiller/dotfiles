@@ -212,6 +212,8 @@ nnoremap <leader>= :Tab /=<CR>
 nnoremap <leader>[ f,a<CR><ESC>
 " comma-t: toggle TagBar, a plugin that displays ctags in a sidebar
 nnoremap <leader>t :TagbarToggle<CR>
+" comma-r: CtrlP's most recently used files mode
+nnoremap <leader>r :CtrlPMRUFiles<CR>
 " Select just-pasted text
 nnoremap gp `[v`]
 
