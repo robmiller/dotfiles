@@ -90,6 +90,8 @@ alias brew="RUBYOPT=''; brew"
 
 [[ -s "$HOME/.z.sh" ]] && source "$HOME/.z.sh"
 
+[[ -e "$HOME/private.sh" ]] && source "$HOME/private.sh"
+
 export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:~/bin:/usr/X11/bin:/Developer/usr/bin:~/pear/bin:/usr/local/sbin:$HOME/.rvm.bin:/usr/bin:/bin:/usr/sbin:/sbin:
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
