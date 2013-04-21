@@ -41,6 +41,7 @@
 	l = log --oneline --abbrev-commit
 	lg = log --abbrev-commit --decorate
 	ds = diff --stat
+	rl = reflog --date=relative
 
 	code-review = difftool origin/master...
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
