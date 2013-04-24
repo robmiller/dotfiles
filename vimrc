@@ -6,6 +6,8 @@ set encoding=utf-8
 let mapleader = ","
 let maplocalleader = ","
 
+set clipboard=unnamed
+
 set mouse=a
 set background=dark
 colorscheme solarized
