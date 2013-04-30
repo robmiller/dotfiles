@@ -102,4 +102,4 @@
 	url = git://github.com/tpope/vim-abolish.git
 [submodule "vim/bundle/ctrlp-funky"]
 	path = vim/bundle/ctrlp-funky
-	url = git://github.com/tacahiroy/ctrlp-funky.git
+	url = git@github.com:robmiller/ctrlp-funky.git
