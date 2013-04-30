@@ -196,6 +196,16 @@ map <D-9> 9gt
 " ...and Cmd + 0 selects the final tab
 map <D-0> :tablast<CR>
 
+" Ctrl-P config
+" comma-r to activate most recently used files mode
+nnoremap <leader>r :CtrlPMRUFiles<CR>
+" enable ctrlp-funky extension
+let g:ctrp_extensions = ['funky']
+" comma-f to activate the function list
+nnoremap <leader>f :CtrlPFunky<CR>
+" comma-F to active the function list using the word under the cursor
+nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
+
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " comma-A: start an Ack search
@@ -214,8 +224,6 @@ nnoremap <leader>= :Tab /=<CR>
 nnoremap <leader>[ f,a<CR><ESC>
 " comma-t: toggle TagBar, a plugin that displays ctags in a sidebar
 nnoremap <leader>t :TagbarToggle<CR>
-" comma-r: CtrlP's most recently used files mode
-nnoremap <leader>r :CtrlPMRUFiles<CR>
 " Select just-pasted text
 nnoremap gp `[v`]
 
