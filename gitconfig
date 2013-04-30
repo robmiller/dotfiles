@@ -46,6 +46,8 @@
 	code-review = difftool origin/master...
 	log-merges = log --abbrev-commit --decorate --merges --first-parent
 
+	tag-review = "!f() { git commit --amend -m \"$(git log -1 --pretty=\"format:%s%n%n%b%n%nReviewed-by: $1\")\"; }; f"
+
 	merge-span = "!f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
 	merge-log = "!git log `git merge-span .. $1`"
 	merge-diff = "!git diff `git merge-span ... $1`"
@@ -69,7 +71,7 @@
 
 	pusha = push --all
 
-	merge = merge --no-ff --no-commit 
+	merge = merge --no-ff
 
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
