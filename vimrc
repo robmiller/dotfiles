@@ -206,6 +206,24 @@ nnoremap <leader>f :CtrlPFunky<CR>
 " comma-F to active the function list using the word under the cursor
 nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
 
+" Cmd-Shift-R for RSpec
+nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
+" Cmd-Shift-L for RSpec Current Line
+nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
+" ,Cmd-R for Last conque command
+nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
+
+nmap <silent> <Leader>rcrr :call RunRubyCurrentFileConque()<CR>
+nmap <silent> <Leader>rcss :call RunRspecCurrentFileConque()<CR>
+nmap <silent> <Leader>rcll :call RunRspecCurrentLineConque()<CR>
+nmap <silent> <Leader>rccc :call RunCucumberCurrentFileConque()<CR>
+nmap <silent> <Leader>rccl :call RunCucumberCurrentLineConque()<CR>
+nmap <silent> <Leader>rcRR :call RunRakeConque()<CR>
+nmap <silent> <Leader>rcrl :call RunLastConqueCommand()<CR>
+
+nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
+nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
+
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " comma-A: start an Ack search
