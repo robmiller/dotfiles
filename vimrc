@@ -156,7 +156,8 @@ au BufNewFile,BufRead *gitconfig set filetype=gitconfig
 autocmd FileType ruby
 	\ setlocal shiftwidth=2 |
 	\ setlocal tabstop=2 |
-	\ setlocal expandtab
+	\ setlocal expandtab |
+	\ setlocal smarttab
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
