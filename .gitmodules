@@ -108,7 +108,7 @@
 	url = git://github.com/skwp/vim-ruby-conque.git
 [submodule "vim/bundle/vim-conque"]
 	path = vim/bundle/vim-conque
-	url = git://github.com/rson/vim-conque.git
+	url = git://github.com/vim-scripts/Conque-Shell.git
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
