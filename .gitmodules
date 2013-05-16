@@ -112,3 +112,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/CoVim"]
+	path = vim/bundle/CoVim
+	url = git://github.com/FredKSchott/CoVim.git
