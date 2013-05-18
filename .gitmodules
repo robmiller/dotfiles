@@ -115,3 +115,6 @@
 [submodule "vim/bundle/CoVim"]
 	path = vim/bundle/CoVim
 	url = git://github.com/FredKSchott/CoVim.git
+[submodule "vim/bundle/vim-ruby-sinatra"]
+	path = vim/bundle/vim-ruby-sinatra
+	url = git://github.com/hallison/vim-ruby-sinatra.git
