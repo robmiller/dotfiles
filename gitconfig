@@ -79,6 +79,8 @@
 
 	merge = merge --no-ff
 
+	ctags = "!.git/hooks/ctags"
+
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
@@ -114,3 +116,5 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
+[init]
+	templatedir = ~/.git_template
