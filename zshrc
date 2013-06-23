@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="blinks"
 
-plugins=(osx ruby battery github sublime)
+plugins=(osx ruby battery)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,5 +99,7 @@ export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
+
+export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
