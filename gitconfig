@@ -90,6 +90,7 @@
 	sync = !legit sync \"$@\"
 	graft = !legit graft \"$@\"
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
+	up-sub = "!f() { git submodule foreach 'git fetch origin --tags; git checkout master; git pull' && git pull && git submodule update --init --recursive; }; f"
 
 [branch]
 	autosetupmerge = true
