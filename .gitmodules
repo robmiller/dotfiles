@@ -36,7 +36,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar
+	url = git@github.com:majutsushi/tagbar.git
 [submodule "vim/bundle/vim-sleuth"]
 	path = vim/bundle/vim-sleuth
 	url = git://github.com/tpope/vim-sleuth.git
