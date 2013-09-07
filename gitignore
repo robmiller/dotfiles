@@ -47,3 +47,5 @@ Session.vim
 #############
 wp-config.php
 
+# Ruby
+*.gem

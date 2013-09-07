@@ -118,3 +118,6 @@
 [submodule "vim/bundle/vim-ruby-sinatra"]
 	path = vim/bundle/vim-ruby-sinatra
 	url = git://github.com/hallison/vim-ruby-sinatra.git
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
