@@ -83,6 +83,8 @@
 
 	ctags = "!.git/hooks/ctags"
 
+	latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
+
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
