@@ -49,6 +49,11 @@ function clc() {
 	fc -ln -1 | tr -d '\n' | pbcopy
 }
 
+# Copy the IP address of a hostname to the clipboard
+function nscp() {
+	nslookup $1 | sed -n 'x;$p' | cut -d' ' -f2 | tee >(pbcopy)
+}
+
 # Compile Compass, making a guess about what directory to compile in.
 function compile_compass() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
