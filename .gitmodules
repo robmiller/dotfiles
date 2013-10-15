@@ -127,3 +127,6 @@
 [submodule "vim/bundle/tcomment"]
 	path = vim/bundle/tcomment
 	url = git@github.com:tomtom/tcomment_vim.git
+[submodule "vim/bundle/vim-sneak"]
+	path = vim/bundle/vim-sneak
+	url = git@github.com:justinmk/vim-sneak.git
