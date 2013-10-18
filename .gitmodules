@@ -136,3 +136,6 @@
 [submodule "vim/bundle/csv.vim"]
 	path = vim/bundle/csv.vim
 	url = git@github.com:chrisbra/csv.vim.git
+[submodule "vim/bundle/vim-signify"]
+	path = vim/bundle/vim-signify
+	url = git@github.com:mhinz/vim-signify.git
