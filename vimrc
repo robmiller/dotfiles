@@ -207,6 +207,9 @@ nnoremap <leader>f :CtrlPFunky<CR>
 " comma-F to active the function list using the word under the cursor
 nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
 
+" dwm config
+let g:dwm_master_pane_width = 130
+
 " airline config
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
