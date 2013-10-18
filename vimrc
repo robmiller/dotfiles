@@ -221,6 +221,9 @@ nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
 nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 
+:command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+:command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
 nmap <silent> <Leader>rcrr :call RunRubyCurrentFileConque()<CR>
 nmap <silent> <Leader>rcss :call RunRspecCurrentFileConque()<CR>
 nmap <silent> <Leader>rcll :call RunRspecCurrentLineConque()<CR>
