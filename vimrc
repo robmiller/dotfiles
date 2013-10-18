@@ -209,6 +209,7 @@ nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
 
 " airline config
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Cmd-Shift-R for RSpec
 nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
