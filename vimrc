@@ -207,6 +207,9 @@ nnoremap <leader>f :CtrlPFunky<CR>
 " comma-F to active the function list using the word under the cursor
 nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
 
+" airline config
+let g:airline#extensions#tabline#enabled = 1
+
 " Cmd-Shift-R for RSpec
 nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
