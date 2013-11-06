@@ -10,9 +10,6 @@
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/bundle/vim-peepopen"]
-	path = vim/bundle/vim-peepopen
-	url = https://github.com/shemerey/vim-peepopen.git
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
