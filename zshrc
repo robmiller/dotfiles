@@ -103,4 +103,7 @@ export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
 
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
 
+# Add homebrew Python path
+PATH=/usr/local/share/python:$PATH
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
