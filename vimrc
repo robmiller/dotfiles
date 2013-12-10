@@ -216,6 +216,9 @@ let g:dwm_master_pane_width = 130
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+let g:signify_update_on_bufenter = 1
+let g:signify_update_on_focusgained = 1
+
 " Cmd-Shift-R for RSpec
 nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
