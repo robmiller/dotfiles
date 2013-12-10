@@ -17,10 +17,10 @@ call pathogen#infect()
 
 " Load Powerline
 if isdirectory(expand('~/.local/lib/python2.7/site-packages/powerline/bindings/vim'))
-	set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+    set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 endif
 if isdirectory(expand('~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim'))
-	set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+    set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 endif
 
 " Tabs are four spaces wide
@@ -61,7 +61,7 @@ set fileformats+=mac
 
 " Exclude hidden files from the file browser
 if !exists('g:netrw_list_hide')
-	let g:netrw_list_hide = '^\.,\~$,^tags$'
+    let g:netrw_list_hide = '^\.,\~$,^tags$'
 endif
 
 " A more sensible undofile structure, taken from Tim Pope's
@@ -154,10 +154,10 @@ au BufNewFile,BufRead Capfile set filetype=ruby
 au BufNewFile,BufRead *gitconfig set filetype=gitconfig
 
 autocmd FileType ruby
-	\ setlocal shiftwidth=2 |
-	\ setlocal tabstop=2 |
-	\ setlocal expandtab |
-	\ setlocal smarttab
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2 |
+    \ setlocal expandtab |
+    \ setlocal smarttab
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
@@ -262,7 +262,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " comma-c: comment out the current line
 augroup comment_line
-	autocmd!
-	autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
+    autocmd!
+    autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
 augroup END
 
