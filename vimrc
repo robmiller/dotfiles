@@ -260,6 +260,8 @@ nnoremap <leader>[ f,a<CR><ESC>
 nnoremap <leader>t :TagbarToggle<CR>
 " Select just-pasted text
 nnoremap gp `[v`]
+" Set paste, paste, set nopaste
+nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
