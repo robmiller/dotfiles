@@ -107,3 +107,5 @@ export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
 PATH=/usr/local/share/python:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+PATH=$PATH:/usr/local/share/npm/bin
