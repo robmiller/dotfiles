@@ -94,7 +94,26 @@ export EDITOR='vim'
 
 [[ -e $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local/bin:/opt/local/sbin:~/bin:/usr/X11/bin:/Developer/usr/bin:~/pear/bin:/usr/local/sbin:$HOME/.rvm.bin:/usr/bin:/bin:/usr/sbin:/sbin:
+# Standard binaries
+PATH=~/bin:/usr/local/bin:/usr/bin:/bin
+# System binaries
+PATH+=:/usr/local/sbin:/usr/sbin:/sbin
+# RVM, the Ruby Version Manager
+PATH+=:~/.rvm/bin
+# MacPorts
+PATH+=:/opt/local/bin:/opt/local/sbin
+# XCode build tools
+PATH+=:/Developer/usr/bin
+# Pythonbrew
+PATH+=:~/.pythonbrew/bin
+# X11-related gubbins
+PATH+=:/usr/X11/bin
+# PEAR, the PHP package manager
+PATH+=:~/pear/bin
+# pip-installed binaries
+PATH+=:/usr/local/share/python
+# npm-installed binaries
+PATH+=:/usr/local/share/npm/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
@@ -102,10 +121,3 @@ export PATH=/usr/local/bin:$PATH:/Developer/usr/bin:~/.pythonbrew/bin:/opt/local
 export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
 
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
-
-# Add homebrew Python path
-PATH=/usr/local/share/python:$PATH
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-PATH=$PATH:/usr/local/share/npm/bin
