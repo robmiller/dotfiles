@@ -123,3 +123,5 @@
 	trustExitCode = true
 [init]
 	templatedir = ~/.git_template
+[oh-my-zsh]
+	hide-status = 1
