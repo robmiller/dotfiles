@@ -161,6 +161,8 @@ autocmd FileType ruby
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
+autocmd FileType markdown setlocal spell spelllang=en_gb
+
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
 
