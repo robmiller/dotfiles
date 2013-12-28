@@ -262,6 +262,8 @@ nnoremap <leader>t :TagbarToggle<CR>
 nnoremap gp `[v`]
 " Set paste, paste, set nopaste
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+" Highlight blocks in Liquid
+nnoremap <Leader>h o{% highlight ruby %}<ESC>o<ESC>o{% endhighlight %}<ESC>k
 
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
