@@ -151,3 +151,6 @@
 [submodule "vim/bundle/vim-skip"]
 	path = vim/bundle/vim-skip
 	url = git@github.com:jayflo/vim-skip.git
+[submodule "vim/bundle/splitjoin"]
+	path = vim/bundle/splitjoin
+	url = git@github.com:AndrewRadev/splitjoin.vim.git
