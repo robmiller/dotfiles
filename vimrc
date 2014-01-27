@@ -262,10 +262,16 @@ nnoremap <leader>t :TagbarToggle<CR>
 nnoremap gp `[v`]
 " Set paste, paste, set nopaste
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-" Highlight blocks in Liquid
-nnoremap <Leader>h o{% highlight ruby %}<ESC>o<ESC>o{% endhighlight %}<ESC>k
 " Word count current file
 nnoremap <Leader>c :!wc -w '%'<CR>
+
+" Leader commands for blogging
+function LiquidLeaders()
+	" Highlight blocks in Liquid
+	nnoremap <Leader>h i{% highlight ruby %}<ESC>o<ESC>o{% endhighlight %}<ESC>k
+	nnoremap <Leader>s o__________<ESC>o<ESC>
+endfunction
+autocmd FileType liquid call LiquidLeaders()
 
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
