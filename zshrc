@@ -59,6 +59,10 @@ function compile_compass() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
 }
 
+function mdcd() {
+	mkdir $1 && cd $1
+}
+
 alias lsl="ls -ahl"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
