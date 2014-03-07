@@ -85,6 +85,8 @@
 
 	latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 
+	g = grep --break --heading --line-number
+
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 	switch = !legit switch \"$@\"
@@ -125,3 +127,7 @@
 	templatedir = ~/.git_template
 [oh-my-zsh]
 	hide-status = 1
+
+[grep]
+	extendRegexp = true
+	lineNumber = true
