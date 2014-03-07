@@ -63,6 +63,10 @@ function mdcd() {
 	mkdir $1 && cd $1
 }
 
+function fix_utf8() {
+	iconv -f utf8 -t utf8 "$1" | sponge "$1"
+}
+
 alias lsl="ls -ahl"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
