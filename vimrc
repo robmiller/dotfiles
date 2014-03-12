@@ -283,6 +283,11 @@ augroup comment_line
     autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
 augroup END
 
+augroup run_line
+	autocmd!
+	autocmd FileType ruby nnoremap <F5> yyp!!ruby<CR><Esc>I# => <Esc>
+augroup END
+
 " Highlight 'words to avoid in tech writing'
 highlight TechWordsToAvoid ctermbg=red ctermfg=white
 function MatchTechWordsToAvoid()
