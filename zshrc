@@ -65,6 +65,10 @@ function indent() {
 	sed 's/^/    /'
 }
 
+function cpsrc() {
+	cat $1 | indent | pbcopy
+}
+
 # Compile Compass, making a guess about what directory to compile in.
 function compile_compass() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
