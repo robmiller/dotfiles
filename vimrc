@@ -289,6 +289,9 @@ augroup run_line
 	autocmd FileType ruby nnoremap <F5> yyp!!ruby<CR><Esc>I# => <Esc>
 augroup END
 
+" Command for reformatting JSON files
+com! FormatJSON %!python -m json.tool
+
 " Highlight 'words to avoid in tech writing'
 highlight TechWordsToAvoid ctermbg=red ctermfg=white
 function MatchTechWordsToAvoid()
