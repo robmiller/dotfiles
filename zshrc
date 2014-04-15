@@ -60,6 +60,11 @@ function nscp() {
 	nslookup $1 | sed -n 'x;$p' | cut -d' ' -f2 | tee >(pbcopy)
 }
 
+# I don't use C indent, so I'm happy to replace it
+function indent() {
+	sed 's/^/    /'
+}
+
 # Compile Compass, making a guess about what directory to compile in.
 function compile_compass() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
