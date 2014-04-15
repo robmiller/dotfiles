@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="blinks"
 
-plugins=(osx ruby battery bundler git-extras gem cp macports brew rake copydir copyfile)
+plugins=(osx ruby battery bundler git-extras gem cp macports brew rake copydir copyfile hub)
 
 source $ZSH/oh-my-zsh.sh
 
