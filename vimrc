@@ -252,7 +252,7 @@ nnoremap <leader>q gqip
 " comma-w: hard-wrap current line as though it was a paragraph
 nnoremap <leader>w o<ESC>kgqip}dd
 " comma-v: select the just-pasted text
-nnoremap <leader>v V`]
+nnoremap <leader>v `[v`]
 " comma-=: align assignments in current block
 nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
