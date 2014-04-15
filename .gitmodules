@@ -160,3 +160,6 @@
 [submodule "vim/bundle/clone"]
 	path = vim/bundle/clone
 	url = git@github.com:vim-scripts/clone.git
+[submodule "vim/bundle/vim-jdaddy"]
+	path = vim/bundle/vim-jdaddy
+	url = git@github.com:tpope/vim-jdaddy.git
