@@ -158,6 +158,7 @@ autocmd FileType ruby
     \ setlocal tabstop=2 |
     \ setlocal expandtab |
     \ setlocal smarttab
+let b:ruby_no_expensive = 1
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
