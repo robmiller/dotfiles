@@ -22,6 +22,8 @@ autoload -U zmv
 # finish
 REPORTTIME=10
 
+alias chomp="perl -pe 'chomp if eof'"
+
 function webdev_mysql() {
   echo "Killing existing connection (sudo)..."
   sudo lsof -Pnl +M -i @127.0.0.1:3306 | awk '/[0-9]/ {print $2}' | xargs sudo kill
