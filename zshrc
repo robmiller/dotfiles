@@ -83,6 +83,8 @@ function fix_utf8() {
 }
 
 alias lsl="ls -ahl"
+alias lsd="ls -ld *(-/DN)"
+alias ls-today="ls *(m-1)"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
 
