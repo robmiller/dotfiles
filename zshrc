@@ -18,6 +18,10 @@ setopt extended_glob
 # zmv is a pattern-based file renaming module.
 autoload -U zmv
 
+# Report the time taken for any command that takes longer than 10s to
+# finish
+REPORTTIME=10
+
 function webdev_mysql() {
   echo "Killing existing connection (sudo)..."
   sudo lsof -Pnl +M -i @127.0.0.1:3306 | awk '/[0-9]/ {print $2}' | xargs sudo kill
