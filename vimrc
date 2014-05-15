@@ -230,14 +230,6 @@ nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 :command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
 :command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
 
-nmap <silent> <Leader>rcrr :call RunRubyCurrentFileConque()<CR>
-nmap <silent> <Leader>rcss :call RunRspecCurrentFileConque()<CR>
-nmap <silent> <Leader>rcll :call RunRspecCurrentLineConque()<CR>
-nmap <silent> <Leader>rccc :call RunCucumberCurrentFileConque()<CR>
-nmap <silent> <Leader>rccl :call RunCucumberCurrentLineConque()<CR>
-nmap <silent> <Leader>rcRR :call RunRakeConque()<CR>
-nmap <silent> <Leader>rcrl :call RunLastConqueCommand()<CR>
-
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
 
@@ -273,6 +265,15 @@ function LiquidLeaders()
 	nnoremap <Leader>s o__________<ESC>o<ESC>
 endfunction
 autocmd FileType liquid call LiquidLeaders()
+
+" Leader commands for xmp-filter
+autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>r <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
