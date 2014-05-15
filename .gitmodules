@@ -163,3 +163,9 @@
 [submodule "vim/bundle/vim-jdaddy"]
 	path = vim/bundle/vim-jdaddy
 	url = git@github.com:tpope/vim-jdaddy.git
+[submodule "vim/bundle/vim-ruby-xmpfilter"]
+	path = vim/bundle/vim-ruby-xmpfilter
+	url = https://github.com/indirect/vim-ruby-xmpfilter.git
+[submodule "vim/bundle/copy-as-rtf"]
+	path = vim/bundle/copy-as-rtf
+	url = git@github.com:vim-scripts/copy-as-rtf.git
