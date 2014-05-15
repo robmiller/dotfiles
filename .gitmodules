@@ -169,6 +169,3 @@
 [submodule "vim/bundle/copy-as-rtf"]
 	path = vim/bundle/copy-as-rtf
 	url = git@github.com:vim-scripts/copy-as-rtf.git
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = git@github.com:Shougo/neocomplcache.vim.git
