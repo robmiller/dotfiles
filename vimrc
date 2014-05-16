@@ -6,22 +6,19 @@ set encoding=utf-8
 let mapleader = ","
 let maplocalleader = ","
 
+" Use the system clipboard
 set clipboard=unnamed
 
 set mouse=a
 set background=dark
 colorscheme solarized
 
+" We're using a 256 colour terminal.
+set t_Co=256
+
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
-
-" Load Powerline
-if isdirectory(expand('~/.local/lib/python2.7/site-packages/powerline/bindings/vim'))
-    set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
-endif
-if isdirectory(expand('~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim'))
-    set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
-endif
+filetype plugin indent on
 
 " Tabs are four spaces wide
 set tabstop=4
@@ -31,15 +28,52 @@ set autoindent
 set shiftwidth=4
 " Always indent to a multiple of shiftwidth
 set shiftround
-" This is here to wrap Git commit messages to 72 chars.
-filetype indent plugin on
 
-" Display when in insert/visual/replace mode in the status bar
-set showmode
-" Show the number of selected characters in visual mode
-set showcmd
-" Allow hiding buffers that have changes
-set hidden
+" Commands for converting tabs to spaces.
+:command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+:command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
+
+" Soft-wrap text
+set wrap
+" Wrap at 72 chars wide
+set textwidth=72
+set formatoptions=qrn1
+
+" Space in normal mode centres the screen on the current line
+nnoremap <space> zz
+
+" Unmap arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Unmap help
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" In insert mode, double-tap J to enter command mode.
+inoremap jj <ESC>
+
+" Some mappings for tabs: Cmd + number selects a particular tab
+map <D-S-]> gt
+map <D-S-[> gT
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+" ...and Cmd + 0 selects the final tab
+map <D-0> :tablast<CR>
 
 " When changing buffers with :e, match with wildcards
 set wildmenu
@@ -95,32 +129,20 @@ set ruler
 set relativenumber
 
 set backspace=indent,eol,start
+" Always show a status line, even if there's only one window
 set laststatus=2
 
 " Make the behaviour of Y the same as C and D (i.e. yank to the end of
 " the line rather than yanking the whole line).
 nnoremap Y y$
 
-" Toggle the Tagbar plugin, a sidebar with a list of ctags
-nnoremap T :TagbarToggle<CR>
-
-" Always use Perl-style regular expressions
-nnoremap / /\v
-vnoremap / /\v
-
 " Display invisibles
 set list
 set listchars=trail:·,precedes:«,extends:»,eol:¬,tab:▸\ 
 
-" Folding
-" Start with all folds collapsed
-set foldlevelstart=0
-nnoremap + za
-vnoremap + za
-
-" We're using a 256 colour terminal.
-set t_Co=256
-
+" Always use Perl-style regular expressions when searching
+nnoremap / /\v
+vnoremap / /\v
 " The next few settings set up a nice find-as-you-type that ignores case when
 " you want to but is case-sensitive when you want it to be as well
 set ignorecase
@@ -138,14 +160,12 @@ nnoremap <silent> <cr> :nohlsearch<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Soft-wrap text
-set wrap
-" Wrap at 72 chars wide
-set textwidth=72
-set formatoptions=qrn1
+" Filetype-specific stuff
 
-" Set .md files to Markdown syntax
+" Markdown
 au BufNewFile,BufRead *.md set filetype=markdown
+autocmd FileType markdown setlocal spell spelllang=en_gb
+
 " Set .twig files to HTML Jinja syntax (it's what Twig is based on)
 au BufNewFile,BufRead *.twig set filetype=jinja
 " Capistrano's Capfiles are just Ruby
@@ -162,43 +182,7 @@ let b:ruby_no_expensive = 1
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
-autocmd FileType markdown setlocal spell spelllang=en_gb
-
-" Space in normal mode centres the screen on the current line
-nnoremap <space> zz
-
-" Unmap arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Unmap help
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
-" In insert mode, double-tap J to enter command mode.
-inoremap jj <ESC>
-
-" Some mappings for tabs: Cmd + number selects a particular tab
-map <D-S-]> gt
-map <D-S-[> gT
-map <D-1> 1gt
-map <D-2> 2gt
-map <D-3> 3gt
-map <D-4> 4gt
-map <D-5> 5gt
-map <D-6> 6gt
-map <D-7> 7gt
-map <D-8> 8gt
-map <D-9> 9gt
-" ...and Cmd + 0 selects the final tab
-map <D-0> :tablast<CR>
+" Plugin-specific stuff
 
 " Ctrl-P config
 " comma-r to activate most recently used files mode
@@ -217,6 +201,7 @@ let g:dwm_master_pane_width = 130
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" signify (VCS status in the sign column)
 let g:signify_update_on_bufenter = 1
 let g:signify_update_on_focusgained = 1
 
@@ -241,33 +226,28 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" Recommended key-mappings.
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
 " Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
+inoremap <expr><TAB> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+let g:neocomplcache_enable_auto_select = 0
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType css           setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType javascript    setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python        setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml           setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -275,25 +255,9 @@ if !exists('g:neocomplcache_omni_patterns')
 endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-" Cmd-Shift-R for RSpec
-nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
-" Cmd-Shift-L for RSpec Current Line
-nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
-" ,Cmd-R for Last conque command
-nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
-
-:command! -range=% -nargs=0 Tab2Space execute '<line1>,<line2>s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
-:command! -range=% -nargs=0 Space2Tab execute '<line1>,<line2>s#^\( \{'.&ts.'\}\)\+#\=repeat("\t", len(submatch(0))/' . &ts . ')'
-
-nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
-nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
+" Leader commands
 
 " Alignment in visual mode
 " comma-a: align block, asking for character
@@ -305,10 +269,6 @@ vmap <leader>H :Align<space>=><CR>
 
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-" comma-A: start an Ack search
-nnoremap <leader>a :Ack
-" comma-S: sort CSS properties alphabetically
-nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 " comma-q: hard-wrap current paragraph
 nnoremap <leader>q gqip
 " comma-w: hard-wrap current line as though it was a paragraph
@@ -317,11 +277,9 @@ nnoremap <leader>w o<ESC>kgqip}dd
 nnoremap <leader>v `[v`]
 " comma-[: put array element on a new line
 nnoremap <leader>[ f,a<CR><ESC>
-" comma-t: toggle TagBar, a plugin that displays ctags in a sidebar
-nnoremap <leader>t :TagbarToggle<CR>
 " Select just-pasted text
 nnoremap gp `[v`]
-" Set paste, paste, set nopaste
+" Set paste, paste some text, set nopaste
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 " Word count current file
 nnoremap <Leader>c :!wc -w '%'<CR>
@@ -346,17 +304,6 @@ autocmd FileType ruby imap <buffer> <leader>r <Plug>(xmpfilter-run)
 " Commands for quickly editing and reloading this file
 nnoremap <leader>ev :sp $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-
-" comma-c: comment out the current line
-augroup comment_line
-    autocmd!
-    autocmd FileType php,javascript nnoremap <buffer> <localleader>c I//
-augroup END
-
-augroup run_line
-	autocmd!
-	autocmd FileType ruby nnoremap <F5> yyp!!ruby<CR><Esc>I# => <Esc>
-augroup END
 
 " Command for reformatting JSON files
 com! FormatJSON %!python -m json.tool
