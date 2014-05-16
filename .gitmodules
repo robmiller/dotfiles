@@ -28,9 +28,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = git@github.com:majutsushi/tagbar.git
 [submodule "vim/bundle/vim-sleuth"]
 	path = vim/bundle/vim-sleuth
 	url = git://github.com/tpope/vim-sleuth.git
@@ -145,9 +142,6 @@
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = git@github.com:wting/rust.vim.git
-[submodule "vim/bundle/vim-skip"]
-	path = vim/bundle/vim-skip
-	url = git@github.com:jayflo/vim-skip.git
 [submodule "vim/bundle/splitjoin"]
 	path = vim/bundle/splitjoin
 	url = git@github.com:AndrewRadev/splitjoin.vim.git
