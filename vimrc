@@ -295,6 +295,14 @@ nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
 nnoremap <silent> <C-s> :call RelatedSpecVOpen()<CR>
 nnoremap <silent> ,<C-s> :call RelatedSpecOpen()<CR>
 
+" Alignment in visual mode
+" comma-a: align block, asking for character
+vmap <leader>a :Align<space>
+" comma-A: align on =
+vmap <leader>A :Align<space>=<CR>
+" comma-H: align on =>
+vmap <leader>H :Align<space>=><CR>
+
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " comma-A: start an Ack search
@@ -307,8 +315,6 @@ nnoremap <leader>q gqip
 nnoremap <leader>w o<ESC>kgqip}dd
 " comma-v: select the just-pasted text
 nnoremap <leader>v `[v`]
-" comma-=: align assignments in current block
-nnoremap <leader>= :Tab /=<CR>
 " comma-[: put array element on a new line
 nnoremap <leader>[ f,a<CR><ESC>
 " comma-t: toggle TagBar, a plugin that displays ctags in a sidebar
