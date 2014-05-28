@@ -75,6 +75,12 @@ map <D-9> 9gt
 " ...and Cmd + 0 selects the final tab
 map <D-0> :tablast<CR>
 
+" Shorter shortcuts for moving between windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 " When changing buffers with :e, match with wildcards
 set wildmenu
 " Personal preference; I like the immediate visual feedback
