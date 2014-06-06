@@ -78,6 +78,11 @@ function mdcd() {
 	mkdir $1 && cd $1
 }
 
+# cd into the most recently modified directory
+function cdl() {
+	cd $(print -rl -- *(/Dom[1]))
+}
+
 function fix_utf8() {
 	iconv -f utf8 -t utf8 "$1" | sponge "$1"
 }
