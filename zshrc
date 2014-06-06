@@ -150,6 +150,8 @@ PATH+=:/usr/local/share/npm/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
 
+[[ -s "$HOME/.aws" ]] && . "$HOME/.aws"
+
 export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
 
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
