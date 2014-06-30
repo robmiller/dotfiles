@@ -79,8 +79,6 @@
 
 	pusha = push --all
 
-	merge = merge --no-ff
-
 	ctags = "!.git/hooks/ctags"
 
 	latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
