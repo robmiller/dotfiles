@@ -39,7 +39,7 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = log --stat --abbrev-commit
 	l = log --oneline --abbrev-commit
-	lg = log --abbrev-commit --decorate
+	lg = log --abbrev-commit --decorate --show-linear-break
 	ds = diff --stat
 	rl = reflog --date=relative
 
