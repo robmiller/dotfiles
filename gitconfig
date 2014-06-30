@@ -83,6 +83,9 @@
 
 	latest = for-each-ref --count=10 --sort=-committerdate --format='%(committerdate:short) %(refname:short)'
 
+	merge-feature = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); echo $BRANCH; git co master && git pull && git merge --no-ff $BRANCH && git push; }; f"
+	stage-feature = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); echo $BRANCH; git co staging && git pull && git merge --no-ff $BRANCH && git push; }; f"
+
 	g = grep --break --heading --line-number
 
 	# Show files ignored by git:
