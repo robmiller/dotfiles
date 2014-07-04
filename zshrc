@@ -70,7 +70,7 @@ function cpsrc() {
 }
 
 # Compile Compass, making a guess about what directory to compile in.
-function compile_compass() {
+function cc() {
 	ls -d **/s(c|a)ss(:h) | xargs -n 1 compass compile --force
 }
 
