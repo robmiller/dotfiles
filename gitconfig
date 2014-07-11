@@ -68,6 +68,7 @@
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
 	find-branch = "!git branch | cut -c 3- | selecta | xargs git checkout"
+	track-branch = "!git branch -r | cut -c 3- | selecta | xargs git checkout -t"
 
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
