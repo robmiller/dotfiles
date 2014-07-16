@@ -99,6 +99,10 @@ set autoread
 set autowrite
 set fileformats+=mac
 
+" A mapping for command-line mode to replace %% with the directory of
+" the current file; a useful parallel to %. Credit to Gary Bernhardt
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 " Exclude hidden files from the file browser
 if !exists('g:netrw_list_hide')
     let g:netrw_list_hide = '^\.,\~$,^tags$'
