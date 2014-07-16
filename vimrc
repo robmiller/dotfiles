@@ -81,6 +81,15 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" The minimum width of the active window
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
+
 " When changing buffers with :e, match with wildcards
 set wildmenu
 " Personal preference; I like the immediate visual feedback
