@@ -79,9 +79,6 @@
 [submodule "vim/bundle/vim-obsession"]
 	path = vim/bundle/vim-obsession
 	url = git@github.com:robmiller/vim-obsession.git
-[submodule "vim/bundle/dwm"]
-	path = vim/bundle/dwm
-	url = git://github.com/spolu/dwm.vim.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
