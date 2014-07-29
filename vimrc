@@ -261,7 +261,7 @@ inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplcache#close_popup()
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 " Close popup by <Space>.
-inoremap <expr><TAB> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+inoremap <expr><TAB> pumvisible() ? neocomplcache#close_popup() : "\<TAB>"
 let g:neocomplcache_enable_auto_select = 0
 
 " Enable omni completion.
