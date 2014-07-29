@@ -201,6 +201,9 @@ let b:ruby_no_expensive = 1
 
 autocmd FileType gitcommit set colorcolumn=72 spell
 
+let g:PHP_outdentphpescape = 0
+let g:PHP_vintage_case_default_indent = 1
+
 " Plugin-specific stuff
 
 " Ctrl-P config
