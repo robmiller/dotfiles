@@ -172,3 +172,6 @@
 [submodule "vim/bundle/vim-pml"]
 	path = vim/bundle/vim-pml
 	url = git@github.com:nelstrom/vim-pml.git
+[submodule "vim/bundle/vim-ragtag"]
+	path = vim/bundle/vim-ragtag
+	url = git@github.com:tpope/vim-ragtag.git
