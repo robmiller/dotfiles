@@ -178,3 +178,6 @@
 [submodule "vim/bundle/vcl"]
 	path = vim/bundle/vcl
 	url = git@github.com:smerrill/vcl-vim-plugin.git
+[submodule "vim/bundle/vim-chef"]
+	path = vim/bundle/vim-chef
+	url = git@github.com:t9md/vim-chef.git
