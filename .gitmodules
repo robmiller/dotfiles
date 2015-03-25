@@ -181,3 +181,6 @@
 [submodule "vim/bundle/vim-chef"]
 	path = vim/bundle/vim-chef
 	url = git@github.com:t9md/vim-chef.git
+[submodule "vim/bundle/vim-cucumber"]
+	path = vim/bundle/vim-cucumber
+	url = git@github.com:tpope/vim-cucumber.git
