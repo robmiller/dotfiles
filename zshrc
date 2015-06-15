@@ -47,7 +47,7 @@ function strip_trailing_whitespace() {
 
 # Count the significant lines of code in the current directory.
 function sloc() {
-	grep -v '^$' **.(js|php) | grep -v '//' | wc -l
+	grep -v '^$' **/*.(js|php|rb) | grep -v '//' | wc -l
 }
 
 # Copy the last-run command to the clipboard
@@ -91,6 +91,9 @@ alias lsl="ls -ahl"
 alias lsd="ls -ld *(-/DN)"
 alias ls-today="ls *(m-1)"
 
+alias cruby="/opt/chefdk/embedded/bin/ruby"
+alias start-chef="eval '$(chef shell-init zsh)'"
+
 eval "$(hub alias -s)"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
@@ -126,8 +129,12 @@ export EDITOR='vim'
 
 [[ -e $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
+DEFAULT_PATH=$PATH
+
 # Standard binaries
-PATH=~/bin:/usr/local/bin:/usr/bin:/bin
+PATH=~/bin:~/dotfiles/bin:/usr/local/bin:/usr/bin:/bin
 # System binaries
 PATH+=:/usr/local/sbin:/usr/sbin:/sbin
 # RVM, the Ruby Version Manager
@@ -146,6 +153,8 @@ PATH+=:~/pear/bin
 PATH+=:/usr/local/share/python
 # npm-installed binaries
 PATH+=:/usr/local/share/npm/bin
+# Whatever the path was originally set to
+PATH+=:$DEFAULT_PATH
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
