@@ -210,11 +210,31 @@ autocmd FileType vcl
     \ setlocal expandtab |
     \ setlocal smarttab
 
+autocmd FileType liquid
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2 |
+    \ setlocal expandtab |
+    \ setlocal smarttab
+
+autocmd FileType pml
+    \ setlocal shiftwidth=2 |
+    \ setlocal tabstop=2 |
+    \ setlocal expandtab |
+    \ setlocal smarttab
+
 " Plugin-specific stuff
+
+" Smart quotes
+augroup textobj_quote
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init()
+  autocmd FileType pml      call textobj#quote#init()
+  autocmd FileType text     call textobj#quote#init({'educate': 0})
+augroup END
 
 " Ctrl-P config
 " comma-r to activate most recently used files mode
-nnoremap <leader>r :CtrlPMRUFiles<CR>
+nnoremap <leader>t :CtrlPMRUFiles<CR>
 " enable ctrlp-funky extension
 let g:ctrp_extensions = ['funky']
 " comma-f to activate the function list
@@ -313,6 +333,10 @@ nnoremap gp `[v`]
 nnoremap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 " Word count current file
 nnoremap <Leader>c :!wc -w '%'<CR>
+" Strip inner whitespace in XML tags
+autocmd FileType xml,pml nnoremap <Leader>t vitgeOWxvitp
+" Convert hashrocket hash to new-style Ruby one
+autocmd FileType ruby nnoremap <Leader>h f:xf=gea:<ESC>f=3x
 
 " Leader commands for blogging
 function LiquidLeaders()
