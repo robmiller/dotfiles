@@ -199,3 +199,6 @@
 [submodule "vim/bundle/vim-lotus"]
 	path = vim/bundle/vim-lotus
 	url = git@github.com:avdgaag/vim-lotus.git
+[submodule "vim/bundle/vim-ruby-fold"]
+	path = vim/bundle/vim-ruby-fold
+	url = git@github.com:bruno-/vim-ruby-fold.git
