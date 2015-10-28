@@ -161,6 +161,8 @@ PATH+=:$DEFAULT_PATH
 
 [[ -s "$HOME/.aws" ]] && . "$HOME/.aws"
 
+[[ -s "$HOME/.secret" ]] && . "$HOME/.secret"
+
 export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
 
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
