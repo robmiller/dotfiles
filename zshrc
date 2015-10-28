@@ -129,7 +129,7 @@ export EDITOR='vim'
 
 [[ -e $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 DEFAULT_PATH=$PATH
 
