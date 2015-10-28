@@ -1,0 +1,17 @@
+\set QUIET 1
+
+\set ON_ERROR_ROLLBACK interactive
+
+\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
+\set PROMPT2 'more %R > '
+\timing
+\set COMP_KEYWORD_CASE upper
+\set VERBOSITY verbose
+
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+
+\pset null (null)
+\x auto
+
+\unset QUIET
