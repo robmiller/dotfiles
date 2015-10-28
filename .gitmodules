@@ -202,3 +202,6 @@
 [submodule "vim/bundle/vim-ruby-fold"]
 	path = vim/bundle/vim-ruby-fold
 	url = git@github.com:bruno-/vim-ruby-fold.git
+[submodule "vim/bundle/vim-rubocop"]
+	path = vim/bundle/vim-rubocop
+	url = git@github.com:ngmy/vim-rubocop.git
