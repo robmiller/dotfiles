@@ -118,7 +118,7 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'jj' vi-cmd-mode
 
-type lesspipe.sh >/dev/null 2>&1 && export LESSOPEN="| lesspipe.sh %s"
+type src-hilite-lesspipe.sh >/dev/null 2>&1 && export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS=' -RFX '
 
 export EDITOR='vim'
