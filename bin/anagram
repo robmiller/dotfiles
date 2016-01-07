@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+input        = ARGV[0]
+input_sorted = input.chars.sort.join
+
+File.foreach("/usr/share/dict/words") do |word|
+  if word.chomp.chars.sort.join == input_sorted
+    puts word
+  end
+end
