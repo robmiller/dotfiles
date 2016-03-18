@@ -205,3 +205,6 @@
 [submodule "vim/bundle/vim-rubocop"]
 	path = vim/bundle/vim-rubocop
 	url = git@github.com:ngmy/vim-rubocop.git
+[submodule "vim/bundle/vim-blade"]
+	path = vim/bundle/vim-blade
+	url = git@github.com:jwalton512/vim-blade.git
