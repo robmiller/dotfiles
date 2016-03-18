@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+#
+# enable-rs-db-root
+#
+# Enables the root account on a Rackspace cloud database instance.
+#
+# Usage:
+#
+#   enable-rs-db-root name.of.your.instance.example.com
+#
+# Rackspace cloud databases disable the root account by default, meaning
+# that you have to create databases etc. through the GUI or over the API
+# rather than through standard mySQL tools. The root account can't be
+# enabled through the GUI, but it can be enabled over the API; this
+# script does that.
+#
+# Requires Ruby and the fog gem (`gem install fog`).
+#
+# Assumes your Rackspace credentials are in environment variables called
+# `RACKSPACE_USERNAME` and `RACKSPACE_API_KEY`.
+
+require "fog"
+
+instance_name = ARGV.fetch(0)
+
+@databases = Fog::Rackspace::Databases.new(
+  rackspace_username: ENV.fetch("RACKSPACE_USERNAME"),
+  rackspace_api_key:  ENV.fetch("RACKSPACE_API_KEY"),
+  rackspace_region:   :lon,
+)
+
+instance = @databases.instances.find { |i| i.name == instance_name }
+
+unless instance
+  $stderr.puts "Couldn't find an instance with the name #{instance_name}"
+  exit 1
+end
+
+puts "Found a matching database instance (name: #{instance.name}; hostname: #{instance.hostname})"
+puts
+puts "Enabling root user..."
+puts
+
+instance.enable_root_user
+
+puts "Root username: #{instance.root_user}"
+puts "Root password: #{instance.root_password}"
