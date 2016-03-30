@@ -208,3 +208,6 @@
 [submodule "vim/bundle/vim-blade"]
 	path = vim/bundle/vim-blade
 	url = git@github.com:jwalton512/vim-blade.git
+[submodule "vim/bundle/ansible-vim"]
+	path = vim/bundle/ansible-vim
+	url = git@github.com:pearofducks/ansible-vim.git
