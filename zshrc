@@ -152,6 +152,8 @@ PATH+=:~/pear/bin
 PATH+=:/usr/local/share/python
 # npm-installed binaries
 PATH+=:/usr/local/share/npm/bin
+# Big Fish shared scripts
+PATH+=:~/bin/bigfish-scripts
 # Whatever the path was originally set to
 PATH+=:$DEFAULT_PATH
 
