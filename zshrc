@@ -132,6 +132,8 @@ DEFAULT_PATH=$PATH
 
 # Standard binaries
 PATH=~/bin:~/dotfiles/bin:/usr/local/bin:/usr/bin:/bin
+# Un-prefixed coreutils from Homebrew
+PATH+=:/usr/local/opt/coreutils/libexec/gnubin
 # System binaries
 PATH+=:/usr/local/sbin:/usr/sbin:/sbin
 # RVM, the Ruby Version Manager
