@@ -49,3 +49,6 @@ wp-config.php
 
 # Ruby
 *.gem
+
+# IDEs
+.idea
