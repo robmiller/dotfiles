@@ -136,6 +136,8 @@ PATH=~/bin:~/dotfiles/bin:/usr/local/bin:/usr/bin:/bin
 PATH+=:/usr/local/opt/coreutils/libexec/gnubin
 # System binaries
 PATH+=:/usr/local/sbin:/usr/sbin:/sbin
+# Cargo-installed Rust binaries
+PATH+=:~/.multirust/toolchains/stable/cargo/bin
 # RVM, the Ruby Version Manager
 PATH+=:~/.rvm/bin
 # MacPorts
