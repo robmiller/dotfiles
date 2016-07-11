@@ -1,0 +1,4 @@
+#!/bin/sh
+
+source /Users/rob/.rvm/environments/ruby-2.3.0
+/Users/rob/dotfiles/bin/extract-eml-attachments "$@"
