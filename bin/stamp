@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+#
+# stamp
+#
+# Converts a Unix timestamp to a date-time string, and vice versa.
+#
+# Author: Rob Miller <rob@bigfish.co.uk>
+
+time = ARGV[0]
+
+if time.nil?
+  abort "Usage: stamp TIME"
+elsif time =~ /^[0-9\.]+$/
+  puts Time.at(time.to_i)
+else
+  require "time"
+  begin
+    puts Time.parse(time).to_i
+  rescue Object => e
+    abort "Can't parse \"#{time}\": #{e.message}"
+  end
+end
