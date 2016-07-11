@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+#
+# extract-eml-attachments
+#
+# Given an EML file, extracts any attachments from it into the same
+# directory. (I use this in a MailMate/Hazel workflow.)
+
+gem "mail", "~> 2.6"
+require "mail"
+require "pathname"
+
+eml = ARGV[0]
+
+unless eml
+  abort "Usage: #{$0} EML_FILE"
+end
+
+eml = Pathname(eml)
+Dir.chdir(eml.dirname)
+
+mail = Mail.read(eml)
+mail.attachments.each do |attachment|
+  File.open(attachment.filename, "w") do |file|
+    file.write(attachment.read)
+  end
+end
