@@ -211,3 +211,6 @@
 [submodule "vim/bundle/ansible-vim"]
 	path = vim/bundle/ansible-vim
 	url = git@github.com:pearofducks/ansible-vim.git
+[submodule "vim/bundle/vim-test"]
+	path = vim/bundle/vim-test
+	url = git@github.com:janko-m/vim-test.git
