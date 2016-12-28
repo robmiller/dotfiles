@@ -43,6 +43,8 @@
 	ds = diff --stat
 	rl = reflog --date=relative
 
+	refresh = "!git checkout master >/dev/null 2>&1 && git pull"
+
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	publish = "!git push -u origin $(git branch-name)"
 	unpublish = "!git push origin :$(git branch-name)"
