@@ -38,6 +38,8 @@ set wrap
 " Wrap at 72 chars wide
 set textwidth=72
 set formatoptions=qrn1
+" When wrapping text, don't put a double space after sentences
+set nojoinspaces
 
 " Space in normal mode centres the screen on the current line
 nnoremap <space> zz
