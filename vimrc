@@ -382,6 +382,9 @@ autocmd InsertEnter *.md call MatchTechWordsToAvoid()
 autocmd InsertLeave *.md call MatchTechWordsToAvoid()
 autocmd BufWinLeave *.md call clearmatches()
 
+" Allow editing of OS X crontabs
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
 " From Gary Bernhardt's vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
