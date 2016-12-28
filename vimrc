@@ -234,7 +234,7 @@ augroup END
 
 " Ctrl-P config
 " comma-r to activate most recently used files mode
-nnoremap <leader>t :CtrlPMRUFiles<CR>
+nnoremap <leader>u :CtrlPMRUFiles<CR>
 " enable ctrlp-funky extension
 let g:ctrp_extensions = ['funky']
 " comma-f to activate the function list
@@ -337,6 +337,13 @@ nnoremap <Leader>c :!wc -w '%'<CR>
 autocmd FileType xml,pml nnoremap <Leader>t vitgeOWxvitp
 " Convert hashrocket hash to new-style Ruby one
 autocmd FileType ruby nnoremap <Leader>h f:xf=gea:<ESC>f=3x
+
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " Leader commands for blogging
 function LiquidLeaders()
