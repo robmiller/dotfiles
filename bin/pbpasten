@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#
+# Outputs the clipboard contents (OS X), ensuring that there's a final
+# newline present.
+
+`/usr/bin/pbpaste`.each_line do |line|
+  puts line
+end
