@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+$stdin.each { |line| print "> ", line }
