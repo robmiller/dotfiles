@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+#
+# Treating all its arguments as numeric, outputs their arithmetic mean.
+#
+# For example:
+#
+# $ mean 10 20 30
+# 20
+#
+# $ mean 1 1 1 1 1 1 900
+# 129
+#
+# Author: Rob Miller <r@robm.me.uk>
+
+puts ARGV.map(&:to_i).reduce(:+) / ARGV.length
