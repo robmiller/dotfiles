@@ -1,0 +1,30 @@
+#!/bin/zsh
+#
+# rewrite-urls
+#
+# Author: Rob Miller <rob@bigfish.co.uk>
+#
+# Outputs all of the URLs on a given website in the format of nginx
+# rewrite rules. This is useful when developing a new version of a site,
+# making it easy to set up redirects from old-style URLs to new ones.
+
+set -euo pipefail
+IFS=$'\n\t'
+
+HOST=${1:-}
+if [[ -z "$HOST" ]]; then
+	echo "You must specify a hostname" 1>2
+	exit 1
+fi
+
+wget -r -P "$TMPDIR/" --delete-after "http://$HOST/" 2>&1 |
+  grep -B3 'text/html' |
+  grep -B2 '200 OK' | egrep 'https?://' |
+  cut -d' ' -f3- |
+  sort | uniq |
+  ruby -ane 'puts "rewrite ^#{$_.strip.sub(%r{^https?://[^/]+/}, "/")}$ / permanent;"' > "$TMPDIR/rewrites.txt"
+
+echo "Rewrites are in" 1>2
+echo "$TMPDIR/rewrites.txt"
+
+vim "$TMPDIR/rewrites.txt"
