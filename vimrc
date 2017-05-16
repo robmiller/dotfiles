@@ -243,6 +243,8 @@ let g:ctrp_extensions = ['funky']
 nnoremap <leader>f :CtrlPFunky<CR>
 " comma-F to active the function list using the word under the cursor
 nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
+" Ignore files in CtrlP's finder
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor'
 
 " dwm config
 let g:dwm_master_pane_width = 130
