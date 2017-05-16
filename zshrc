@@ -84,7 +84,7 @@ function cdl() {
 }
 
 function fix_utf8() {
-	iconv -f utf8 -t utf8 "$1" | sponge "$1"
+	iconv -f utf8 -t utf8 -c "$1" | sponge "$1"
 }
 
 alias lsl="ls -ahl"
