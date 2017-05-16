@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+#
+# eml2html
+#
+# Given an EML file, extracts the first text/html part from it and
+# outputs it as an HTML file with the same name as the original EML
+# file, along with some basic headers. This is to simulate printing the
+# email.
+
+gem "mail", "~> 2.6"
+require "mail"
+require "pathname"
+
+eml = ARGV[0]
+
+unless eml
+  abort "Usage: #{$0} EML_FILE"
+end
+
+eml = Pathname(eml)
+Dir.chdir(eml.dirname)
+
+mail = Mail.read(eml)
+
+html_part = mail.parts.find { |p| p.content_type =~ /^text\/html/ }
+unless html_part
+  abort "There doesn't seem to be a text/html part in this message."
+end
+
+html_file = Pathname(eml.basename(".eml").to_s + ".html")
+File.open(html_file, "w") do |file|
+  file.puts("<p>From: #{mail.from.first}</p>")
+  file.puts("<p>To: #{mail.to.first}</p>")
+  file.puts("<p>Subject: #{mail.subject}</p>")
+  file.puts("<p>Date: #{mail.date.strftime("%F %T")}</p>")
+  file.write(html_part.body)
+end
+
