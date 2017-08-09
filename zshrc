@@ -87,11 +87,15 @@ function fix_utf8() {
 	iconv -f utf8 -t utf8 -c "$1" | sponge "$1"
 }
 
+function command_exists() {
+	type $1 >/dev/null 2>&1
+}
+
 alias lsl="ls -ahl"
 alias lsd="ls -ld *(-/DN)"
 alias ls-today="ls *(m-1)"
 
-eval "$(hub alias -s)"
+command_exists "hub" && eval "$(hub alias -s)"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
 
@@ -126,7 +130,7 @@ export EDITOR='vim'
 
 [[ -e $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]] && source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[[ -e /usr/libexec/java_home ]] && export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 DEFAULT_PATH=$PATH
 
