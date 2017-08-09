@@ -1,0 +1,83 @@
+#!/usr/bin/env ruby
+#
+# ssl-check
+#
+# Checks for expiring SSL certificates, specified on the command line.
+#
+# Usage:
+#
+#   $ ssl-check hosts.txt
+#
+# …where hosts.txt contains e.g.:
+#
+#   example.com
+#
+# Sample output:
+#
+#   $ ssl-check
+#   SSL certificate for example.com is expiring within 21 days, on 2017-03-24
+#
+# If any of the certificates are expired/expiring, the script's exit
+# status will be 1; if all certs are valid, the exit status will be 0.
+
+require "net/http"
+require "openssl"
+require "date"
+
+# How many days before expiry should we begin to warn?
+CUTOFF = 14
+# If true, information about all certificates will be output, not just
+# the ones that are close to expiring
+VERBOSE = false
+
+unless ARGV[0]
+  abort "Usage: ssl-check HOSTS_FILE"
+end
+
+domains = File.read(ARGV[0]).lines.map { |h| h.strip.downcase }
+
+unless domains.length > 0
+  abort "No domains specified in hosts file"
+end
+
+problems = false
+
+domains.each do |domain|
+  uri = URI.parse("https://" + domain)
+
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+  cert = nil
+  http.start do |h|
+    cert = h.peer_cert
+  end
+
+  unless cert
+    problems = true
+    puts "Couldn't find SSL certificate for #{domain}"
+    next
+  end
+
+  expiry = cert.not_after
+  expiry_in_days = expiry.to_date - Date.today
+
+  if expiry_in_days < CUTOFF
+    problems = true
+    puts "SSL certificate for #{domain} is expiring in #{expiry_in_days.to_i} days, on #{expiry.strftime("%Y-%m-%d")}"
+    next
+  end
+
+  # At this point, we must have a valid certificate
+  if VERBOSE
+    puts "#{domain} SSL certificate is valid and doesn't expire until #{expiry.strftime("%Y-%m-%d")}"
+  end
+end
+
+if problems
+  exit 1
+else
+  puts "All's well."
+  exit 0
+end
