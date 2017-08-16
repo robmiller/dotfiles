@@ -56,7 +56,7 @@ domains.each do |domain|
 
   unless cert
     problems = true
-    puts "Couldn't find SSL certificate for #{domain}"
+    puts "#{domain}: couldn't find SSL certificate"
     next
   end
 
@@ -65,13 +65,13 @@ domains.each do |domain|
 
   if expiry_in_days < CUTOFF
     problems = true
-    puts "SSL certificate for #{domain} is expiring in #{expiry_in_days.to_i} days, on #{expiry.strftime("%Y-%m-%d")}"
+    puts "#{domain}: SSL certificate is expiring in #{expiry_in_days.to_i} days, on #{expiry.strftime("%Y-%m-%d")}"
     next
   end
 
   # At this point, we must have a valid certificate
   if VERBOSE
-    puts "#{domain} SSL certificate is valid and doesn't expire until #{expiry.strftime("%Y-%m-%d")}"
+    puts "#{domain}: SSL certificate is valid and doesn't expire until #{expiry.strftime("%Y-%m-%d")}"
   end
 end
 
