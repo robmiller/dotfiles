@@ -10,6 +10,22 @@
 # $ mean 1 1 1 1 1 1 900
 # 129
 #
+# Alternatively, will take standard input as numbers, one per line, and
+# calculate the arithmetic mean of those.
+#
+# $ echo "1\n2\n3" | mean
+# 2
+#
 # Author: Rob Miller <r@robm.me.uk>
 
-puts ARGV.map(&:to_i).reduce(:+) / ARGV.length
+if ARGV.length > 0
+  input = ARGV
+else
+  input = ARGF.each_line.to_a
+end
+
+unless input.length > 0
+  abort "No input specified"
+end
+
+puts input.map(&:to_i).reduce(:+) / input.length
