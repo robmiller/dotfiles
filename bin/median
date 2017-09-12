@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+#
+# Treating all its arguments as numeric, outputs their median.
+#
+# For example:
+#
+# $ median 10 20 30
+# 20
+#
+# $ median 1 1 1 1 1 1 900
+# 1
+#
+# Alternatively, will take standard input as numbers, one per line, and
+# calculate the median of those.
+#
+# $ echo "1\n2\n3" | median
+# 2
+#
+# Author: Rob Miller <r@robm.me.uk>
+
+if ARGV.length > 0
+  input = ARGV
+else
+  input = ARGF.each_line.to_a
+end
+
+unless input.length > 0
+  abort "No input specified"
+end
+
+middle = (input.length / 2).floor
+puts input.map(&:to_i)[middle]
+
