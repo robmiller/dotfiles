@@ -45,13 +45,18 @@ problems = false
 domains.each do |domain|
   uri = URI.parse("https://" + domain)
 
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  begin
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-  cert = nil
-  http.start do |h|
-    cert = h.peer_cert
+    cert = nil
+    http.start do |h|
+      cert = h.peer_cert
+    end
+  rescue SocketError
+    warn "#{domain}: doesn't seem to exist"
+    next
   end
 
   unless cert
