@@ -224,6 +224,18 @@ autocmd FileType pml
     \ setlocal expandtab |
     \ setlocal smarttab
 
+autocmd FileType javascript
+	\ setlocal shiftwidth=2 |
+	\ setlocal tabstop=2 |
+	\ setlocal expandtab |
+	\ setlocal smarttab
+
+autocmd FileType html
+	\ setlocal shiftwidth=2 |
+	\ setlocal tabstop=2 |
+	\ setlocal expandtab |
+	\ setlocal smarttab
+
 " Plugin-specific stuff
 
 " Smart quotes
