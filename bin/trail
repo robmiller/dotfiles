@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+#
+# trail
+#
+# Prints all but the last N lines of its input/a file. Necessarily has
+# to read its input to work, so might be slow/a memory hog on large
+# input.
+#
+# Author: Rob Miller <r@robm.me.uk>
+
+num_lines_to_trail = ARGV.shift.to_i
+
+input = ARGF.read
+num_input_lines = input.lines.length
+
+num_output_lines = num_input_lines - num_lines_to_trail
+
+if num_output_lines <= 0
+  exit
+else
+  puts input.lines.take(num_output_lines).join
+end
+
