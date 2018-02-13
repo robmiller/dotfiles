@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+#
+# sitemap
+#
+# Author: Rob Miller <rob@bigfish.co.uk>
+#
+# Fetches and parses a sitemaps.org-compatible sitemap file, outputting
+# all of the URLs stored in it; useful to start a spidering process, or
+# to generate a list of URLs to later redirect.
+#
+# It works with nested sitemap files as well as ordinary ones.
+#
+# Usage:
+#
+#   $ sitemap https://example.com/sitemap.xml
+#
+# Requirements:
+#
+#   - Ruby >1.9.2
+#   - The sitemap-parser gem:
+#
+#       $ gem install sitemap-parser
+
+gem "sitemap-parser", "~> 0.4.0"
+require "sitemap-parser"
+
+url = ARGV[0]
+unless url
+  abort "Usage: sitemap URL"
+end
+
+begin
+  sitemap = SitemapParser.new(url, recurse: true)
+
+  sitemap.to_a.each do |url|
+    puts url
+  end
+rescue Exception => e
+  abort "Something terrible went wrong: #{e.message}"
+end
