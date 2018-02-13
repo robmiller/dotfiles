@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+#
+# Sometimes you want to sort a list of hostnames/domains and want
+# example.com to sort next to www.example.com. This does that.
+#
+# Author: Rob Miller <r@robm.me.uk>
+#
+# Usage:
+#
+#   $ cat foo.txt | sort-domains
+#
+#   $ sort-domains foo.txt
+#
+# Assumes each line of input is a hostname.
+
+ARGF.read.lines.sort_by { |u| u.sub(/^www\./, "") }.each { |u| puts u }
