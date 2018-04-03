@@ -57,6 +57,9 @@ domains.each do |domain|
   rescue SocketError
     warn "#{domain}: doesn't seem to exist"
     next
+  rescue Object => e
+    warn "#{domain}: #{e.message}"
+    next
   end
 
   unless cert
