@@ -173,3 +173,10 @@ PATH+=:$DEFAULT_PATH
 export PERL5LIB="/opt/local/lib/perl5/site_perl/5.12.3/"
 
 export PARINIT="rTbgqR B=.,?_A_a Q=_s>|"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
