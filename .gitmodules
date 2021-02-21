@@ -223,3 +223,6 @@
 [submodule "vim/bundle/vim-vue"]
 	path = vim/bundle/vim-vue
 	url = https://github.com/posva/vim-vue.git
+[submodule "vim/bundle/vim-grammarous"]
+	path = vim/bundle/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous.git
