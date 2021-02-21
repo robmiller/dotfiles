@@ -163,8 +163,7 @@ PATH+=:~/bin/bigfish-scripts
 # Whatever the path was originally set to
 PATH+=:$DEFAULT_PATH
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && . "/usr/local/rvm/scripts/rvm"
+eval "$(rbenv init -)"
 
 [[ -s "$HOME/.aws" ]] && . "$HOME/.aws"
 
