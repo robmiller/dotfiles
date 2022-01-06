@@ -10,7 +10,7 @@ let maplocalleader = ","
 set clipboard=unnamed
 
 set mouse=a
-set background=dark
+set background=light
 colorscheme solarized
 
 " We're using a 256 colour terminal.
