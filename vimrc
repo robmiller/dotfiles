@@ -181,11 +181,15 @@ nnoremap <silent> <cr> :nohlsearch<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Lint files with Syntastic on read, not just write
+let g:syntastic_check_on_open = 1
+
 " Filetype-specific stuff
 
 " Markdown
 au BufNewFile,BufRead *.md set filetype=markdown
 autocmd FileType markdown setlocal spell spelllang=en_gb
+let g:syntastic_markdown_checkers = ['proselint']
 
 " Set .twig files to HTML Jinja syntax (it's what Twig is based on)
 au BufNewFile,BufRead *.twig set filetype=jinja
