@@ -215,31 +215,14 @@ autocmd FileType gitcommit set colorcolumn=72 spell
 let g:PHP_outdentphpescape = 0
 let g:PHP_vintage_case_default_indent = 1
 
-autocmd FileType vcl
+autocmd FileType vcl,liquid,pml,markdown,css,scss,sass
     \ setlocal shiftwidth=2 |
     \ setlocal tabstop=2 |
     \ setlocal expandtab |
-    \ setlocal smarttab
+	\ setlocal smarttab |
+	\ setlocal colorcolumn=72
 
-autocmd FileType liquid
-    \ setlocal shiftwidth=2 |
-    \ setlocal tabstop=2 |
-    \ setlocal expandtab |
-    \ setlocal smarttab
-
-autocmd FileType pml
-    \ setlocal shiftwidth=2 |
-    \ setlocal tabstop=2 |
-    \ setlocal expandtab |
-    \ setlocal smarttab
-
-autocmd FileType javascript
-	\ setlocal shiftwidth=2 |
-	\ setlocal tabstop=2 |
-	\ setlocal expandtab |
-	\ setlocal smarttab
-
-autocmd FileType html
+autocmd FileType php,vue,javascript,blade
 	\ setlocal shiftwidth=2 |
 	\ setlocal tabstop=2 |
 	\ setlocal expandtab |
