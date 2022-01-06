@@ -191,6 +191,11 @@ au BufNewFile,BufRead *.md set filetype=markdown
 autocmd FileType markdown setlocal spell spelllang=en_gb
 let g:syntastic_markdown_checkers = ['proselint']
 
+" Replace unspaced em dashes (American) or spaced hypens (yeuch) with spaced en dashes in the current line
+nnoremap <leader>– :s/\v( - \|—)/ – /g<CR>
+" Switch double quotes to single ones
+nnoremap <leader>“ :s/.*/\=tr(submatch(0), '“”', '‘’')<CR>:nohlsearch<CR>
+
 " Set .twig files to HTML Jinja syntax (it's what Twig is based on)
 au BufNewFile,BufRead *.twig set filetype=jinja
 " Capistrano's Capfiles are just Ruby
