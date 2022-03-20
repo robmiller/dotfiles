@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+require "pathname"
+require "erb"
+
+dir = ARGV[0] || Dir.pwd
+dir = Pathname(dir)
+
+images = dir.children.select { |f| %w(.png .jpg .jpeg .gif).include? f.extname }.map { |f| f.basename }
+
+template = ERB.new(DATA.read)
+puts template.result(binding)
+
+__END__
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Index of <%= dir.basename %></title>
+  <style>
+  body {
+    background: #191919;
+    font-family: 16px/18px Georgia, serif;
+    color: #eee;
+  }
+
+  figure {
+    margin: 2em 0;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    font-style: italic;
+  }
+  </style>
+</head>
+<body>
+  <% images.each do |image| %>
+    <figure>
+      <img src="<%= image %>" alt="<%= image %>">
+      <figcaption><%= image %></figcaption>
+    </figure>
+  <% end %>
+</body>
+</html>
