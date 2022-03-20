@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+#
+# Given one or more CSV files, concatenates them – assuming that the
+# first row of each file is a header, and therefore that it shouldn't be
+# repeated between files. It's quite dumb, and assumes that you're
+# trying to concatenate CSV files that make sense shoved one after the
+# other (i.e. they have the same columns in the same places.)
+#
+# Author: Rob MIller <r@robm.me.uk>
+
+file = ARGV.shift
+Process.spawn("cat", file)
+
+ARGV.each do |file|
+  Process.spawn("tail", "+2", file)
+end
