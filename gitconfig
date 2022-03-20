@@ -1,6 +1,7 @@
 [user]
 	name = Rob Miller
 	email = rob@bigfish.co.uk
+	signingkey = E88DAB59E2CB5D59
 [core]
 	excludesfile = ~/.gitignore
 	quotepath = false
