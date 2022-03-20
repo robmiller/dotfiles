@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+#
+# Given a pattern and a replacement, replaces all occurences of the
+# pattern with the replacement on all lines of standard input (or, if
+# files are specified, on all lines of those files).
+#
+# Usage:
+#
+#   $ echo "hello" | gsub e a
+#   hallo
+#
+#   $ gsub e a hello.txt
+#   hallo
+#
+#   $ gsub '[aeiou]' ''
+#   hll
+
+from = %r(#{ARGV.shift}).freeze
+to   = ARGV.shift.to_s.gsub('$', '\\').freeze
+
+ARGF.each_line { |line| puts line.gsub(from, to) }
