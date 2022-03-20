@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+#
+# Strips the garbage out of an Amazon URL and normalises it, also
+# converting it to a specific country's Amazon storefront.
+#
+# Author: Rob Miller <r@robm.me.uk>
+
+require "uri"
+
+domains = {
+  "us" => "amazon.com",
+  "uk" => "amazon.co.uk",
+  "fr" => "amazon.fr",
+  "de" => "amazon.de",
+}
+
+country = "uk"
+
+while ARGV[0].start_with? "-"
+  arg = ARGV.shift.sub(/^\-/, "").downcase
+  case arg
+  when "uk", "fr", "de", "us"
+    country = arg
+  end
+end
+
+uri = URI(ARGV[0])
+
+uri.scheme   = "https"
+uri.hostname = domains[country]
+uri.query    = nil
+
+uri.path.match(%r{dp/[0-9]+/}) do |m|
+  uri.path  = "/#{m[0]}"
+end
+
+puts uri
