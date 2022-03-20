@@ -7,7 +7,7 @@
 # Outputs all of the HTML pages on a given domain.
 
 
-wget -r -nd --delete-after -w 0.1 "$1" 2>&1 |
+wget -r -nd --delete-after -w 1 "$1" 2>&1 |
   grep -B3 text/html |
   grep -B2 '200 OK' | egrep 'https?://' |
   cut -d' ' -f3- |
