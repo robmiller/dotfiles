@@ -1,6 +1,7 @@
 " Bye, vi
 set nocompatible
 syntax on
+filetype plugin indent on
 set encoding=utf-8
 " Comma is an easier leader key to hit
 let mapleader = ","
@@ -18,14 +19,13 @@ set t_Co=256
 
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
-filetype plugin indent on
 
 " Tabs are four spaces wide
-set tabstop=4
+set tabstop=2
 " Newlines should start at the same level as the line above
 set autoindent
 " When indenting, indent by four spaces
-set shiftwidth=4
+set shiftwidth=2
 " Always indent to a multiple of shiftwidth
 set shiftround
 
@@ -192,7 +192,7 @@ autocmd FileType markdown setlocal spell spelllang=en_gb
 let g:syntastic_markdown_checkers = ['proselint']
 
 " Replace unspaced em dashes (American) or spaced hypens (yeuch) with spaced en dashes in the current line
-nnoremap <leader>– :s/\v( - \|—)/ – /g<CR>
+nnoremap <leader>– :s/\v(\s*-\s*\|\s*—\s*)/ – /g<CR>
 " Switch double quotes to single ones
 nnoremap <leader>“ :s/.*/\=tr(submatch(0), '“”', '‘’')<CR>:nohlsearch<CR>
 
@@ -249,6 +249,29 @@ nnoremap <leader>f :CtrlPFunky<CR>
 nnoremap <leader>F :execute 'CtrlPFunky '.expand('<cword>')<CR>
 " Ignore files in CtrlP's finder
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|vendor\|_site'
+
+" When highlighting a result in CtrlP, hit ctrl-v to insert the filename
+" at the cursor point. If it's a Jekyll post, it'll be inserted without
+" its extension, because you're probably using it in {% post_url %}
+function! YankFilenameFunc(action, line)
+  if a:action =~ '^[v]$' && fnamemodify(a:line, ':h') == '_posts'
+    " Get the filename
+    let filename = fnameescape(fnamemodify(a:line, ':t:r'))
+    " Close CtrlP
+    call ctrlp#exit()
+    exec "normal a". filename ."\<Esc>"
+  elseif a:action =~ '^[v]$'
+    " Get the filename
+    let filename = fnameescape(fnamemodify(a:line, ':t'))
+    " Close CtrlP
+    call ctrlp#exit()
+    exec "normal a". filename ."\<Esc>"
+  else
+    " Use CtrlP's default file opening function
+    call call('ctrlp#acceptfile', [a:action, a:line])
+  endif
+endfunction
+let g:ctrlp_open_func = { 'files': 'YankFilenameFunc' }
 
 " dwm config
 let g:dwm_master_pane_width = 130
@@ -376,17 +399,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Command for reformatting JSON files
 com! FormatJSON %!python -m json.tool
-
-" Highlight 'words to avoid in tech writing'
-highlight TechWordsToAvoid ctermbg=red ctermfg=white
-function MatchTechWordsToAvoid()
-	match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
-endfunction
-autocmd FileType markdown call MatchTechWordsToAvoid()
-autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertEnter *.md call MatchTechWordsToAvoid()
-autocmd InsertLeave *.md call MatchTechWordsToAvoid()
-autocmd BufWinLeave *.md call clearmatches()
 
 " Allow editing of OS X crontabs
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
