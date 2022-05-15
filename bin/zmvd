@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+set -euo pipefail
+autoload -U zmv
+IFS=$'\n'
+
+OPS=("${(@f)$(zmv -n $@)}")
+
+function my_mv {
+	echo $2
+}
+
+for op in $OPS; do
+	ruby -e 'puts ARGV[0]' "$op"
+done
