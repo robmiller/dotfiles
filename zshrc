@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="blinks"
 
-plugins=(osx ruby battery bundler git-extras gem cp macports brew rake copydir copyfile hub)
+plugins=(osx ruby battery bundler git-extras gem cp macports brew rake copydir copyfile)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,8 +94,6 @@ function command_exists() {
 alias lsl="ls -ahl"
 alias lsd="ls -ld *(-/DN)"
 alias ls-today="ls *(m-1)"
-
-command_exists "hub" && eval "$(hub alias -s)"
 
 [[ -f /usr/local/bin/ctags ]] && alias ctags="/usr/local/bin/ctags"
 
