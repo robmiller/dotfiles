@@ -14,6 +14,9 @@ setopt correct
 setopt autocd
 # Use more powerful globbing
 setopt extended_glob
+# If a pattern doesn't match, pass it through unchanged
+# This fixes issues with Rake task arguments in particular (`rake foo[bar]`)
+unsetopt nomatch
 
 # zmv is a pattern-based file renaming module.
 autoload -U zmv
