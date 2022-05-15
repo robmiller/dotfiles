@@ -135,16 +135,20 @@ export EDITOR='vim'
 
 DEFAULT_PATH=$PATH
 
-# Standard binaries
-PATH=~/bin:~/dotfiles/bin:/usr/local/bin:/usr/bin:/bin
+# My scripts
+PATH=~/bin:~/dotfiles/bin
+# Homebrew
+PATH+=:/opt/homebrew/bin
 # Un-prefixed coreutils from Homebrew
 PATH+=:/usr/local/opt/coreutils/libexec/gnubin
+# Standard binaries
+PATH+=:/usr/local/bin:/usr/bin:/bin
 # System binaries
 PATH+=:/usr/local/sbin:/usr/sbin:/sbin
-# Cargo-installed Rust binaries
+# Rust: Cargo itself
+PATH+=:~/.cargo/bin
+# Rust: Cargo-installed Rust binaries
 PATH+=:~/.multirust/toolchains/stable/cargo/bin
-# RVM, the Ruby Version Manager
-PATH+=:~/.rvm/bin
 # MacPorts
 PATH+=:/opt/local/bin:/opt/local/sbin
 # XCode build tools
@@ -155,6 +159,8 @@ PATH+=:~/.pythonbrew/bin
 PATH+=:/usr/X11/bin
 # PEAR, the PHP package manager
 PATH+=:~/pear/bin
+# Composer
+PATH+=:~/.composer/vendor/bin
 # pip-installed binaries
 PATH+=:/usr/local/share/python
 # npm-installed binaries
