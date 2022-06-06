@@ -4,7 +4,7 @@ mkdir borders
 
 for image in *.jpg; do
 	echo "Converting $image…"
-	convert -background white -gravity center "$image" -resize 2000x2000 -extent 2000x2000 "borders/$image"
+	convert -background '#fafafa' -gravity center "$image" -resize 2000x2000 -extent 2000x2000 "borders/$image"
 	echo "Done."
 	echo
 done
