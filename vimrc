@@ -20,12 +20,14 @@ set t_Co=256
 " Pathogen is the nicest way to load plugins
 call pathogen#infect()
 
-" Tabs are four spaces wide
+" Tabs are two spaces wide
 set tabstop=2
+" When indenting, indent by two spaces
+set shiftwidth=2
+" Tabs are spaces
+set expandtab
 " Newlines should start at the same level as the line above
 set autoindent
-" When indenting, indent by four spaces
-set shiftwidth=2
 " Always indent to a multiple of shiftwidth
 set shiftround
 
