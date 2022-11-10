@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require "open3"
+require "pry"
+
+title = ARGV.join(" ")
+
+Dir.chdir(File.expand_path("~/projects/tiller"))
+
+filename, status = Open3.capture2("rake", "new[#{title}]")
+filename = filename.strip.sub(/ was created$/, "")
+
+system "vim", filename
+
+system "git", "add", filename
+system "git", "commit", "-m", "Add post: #{title}"
+system "git", "push"
