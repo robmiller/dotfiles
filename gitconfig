@@ -114,6 +114,7 @@
 
 [diff]
 	tool = Kaleidoscope
+	colorMoved = zebra
 
 [merge]
 	conflictstyle = diff3
