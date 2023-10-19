@@ -1,0 +1,103 @@
+#!/usr/bin/env ruby
+#
+# Given a series of payments, will output a payment schedule, assuming
+# that the fees need to have VAT added to them and that payment is 50%
+# on commencement and 50% on completion per phase.
+
+def main
+  figures = ARGV.map { |i| i.to_f }
+  schedule = PaymentSchedule.new(figures)
+  puts schedule
+end
+
+if ARGV.length == 0 || ARGV.include?("--help")
+  puts "Usage: payment-schedule FIGURE1 FIGURE2 FIGURE3..."
+  exit
+end
+
+module NumberImprovements
+  refine Integer do
+    def to_word
+      case self
+        when 0
+          "zero"
+        when 1
+          "one"
+        when 2
+          "two"
+        when 3
+          "three"
+        when 4
+          "four"
+        when 5
+          "five"
+        when 6
+          "six"
+        when 7
+          "seven"
+        when 8
+          "eight"
+        when 9
+          "nine"
+        when 10
+          "ten"
+        else
+          number
+      end
+    end
+  end
+
+  refine Float do
+    def pretty
+      number = if self % 1 == 0
+              sprintf("%d", self)
+            else
+              sprintf("%0.2f", self)
+            end
+      number.reverse.gsub(/(\d{3})(?=\d)/, '\1,').reverse
+    end
+  end
+end
+
+class PaymentSchedule
+  using NumberImprovements
+
+  def initialize(figures)
+    @figures = figures
+  end
+
+  def schedule
+    payment_number = 0
+
+    figures.each.with_index(1).flat_map do |figure, phase|
+      figure_with_vat = figure * 1.2
+      half_with_vat = figure_with_vat / 2.0
+
+      payments = [
+        { number: payment_number += 1, amount: half_with_vat, description: "On commencement of phase #{phase.to_word}" },
+        { number: payment_number += 1, amount: half_with_vat, description: "On completion of phase #{phase.to_word}" },
+      ]
+    end
+  end
+
+  def total
+    schedule.reduce(0) { |total, payment| total += payment[:amount] }
+  end
+
+  def to_s
+    schedule.map do |payment|
+      if payment[:number] == 1
+        "Deposit:\t£#{payment[:amount].pretty}\tBefore commencement of project"
+      else
+        "Payment #{payment[:number]}:\t£#{payment[:amount].pretty}\t#{payment[:description]}"
+      end
+    end.join("\n") +
+    "\nTotal payments:\t£#{total.pretty}\n"
+  end
+
+  private
+  attr_reader :figures
+end
+
+
+main
