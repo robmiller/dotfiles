@@ -226,3 +226,12 @@
 [submodule "vim/bundle/vim-grammarous"]
 	path = vim/bundle/vim-grammarous
 	url = https://github.com/rhysd/vim-grammarous.git
+[submodule "vim/bundle/traces.vim"]
+	path = vim/bundle/traces.vim
+	url = https://github.com/markonm/traces.vim.git
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "vim/bundle/vim-svelte"]
+	path = vim/bundle/vim-svelte
+	url = https://github.com/evanleck/vim-svelte.git

@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "open3"
+require "date"
 require "pry"
 
 title = ARGV.join(" ")
@@ -12,6 +13,21 @@ filename = filename.strip.sub(/ was created$/, "")
 
 system "vim", filename
 
+puts File.read(filename)
+puts
+puts
+
+print "Commit? (Y/n)"
+answer = $stdin.gets.chomp.downcase
+
+abort if answer == "n"
+
+current_image_dir = "images/#{Date.today.strftime("%Y-%m")}}"
+
 system "git", "add", filename
+system "git", "add", "images/thumbnails"
+if Dir.exist? current_image_dir
+  system "git", "add", current_image_dir
+end
 system "git", "commit", "-m", "Add post: #{title}"
 system "git", "push"
