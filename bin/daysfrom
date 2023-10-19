@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "date"
+
+num_days =
+  case ARGV[0]
+  when /^\d+$/
+    ARGV[0].to_i
+  else
+    abort "Usage: daysfrom NUMDAYS [STARTDATE]"
+  end
+
+start_date =
+  case ARGV[1]
+  when /^(\d{4})-(\d{2})-(\d{2})$/
+    Date.new($1.to_i, $2.to_i, $3.to_i)
+  else
+    Date.today
+  end
+
+end_date = start_date + num_days
+
+puts "#{start_date.strftime("%F")} + #{num_days} days → #{end_date.strftime("%F")}"
