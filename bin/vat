@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+amount = ARGV[0].to_i
+
+printf "%-17s %d\n", "Amount:", amount
+printf "%-17s %d\n", "VAT:", (amount * 0.2).round(2)
+printf "%-17s %d\n", "Amount with VAT:", (amount * 1.2).round(2)
