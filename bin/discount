@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+discount_rate, full_rate, quantity = ARGV
+
+quantity ||= 1
+quantity = quantity.to_f
+
+discount_rate = discount_rate.to_f
+full_rate = full_rate.to_f
+
+full_total = full_rate * quantity
+discount_total = discount_rate * quantity
+discount_amount = full_total - discount_total
+
+printf "%-16s %d\n", "Full rate:", full_total
+printf "%-16s %d\n", "Discounted rate:", discount_total
+printf "%-16s %d\n", "Discount:", discount_amount
+
