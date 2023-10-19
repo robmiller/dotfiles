@@ -1,0 +1,23 @@
+#!/bin/zsh
+#
+# Given an image path/to/foo.jpg, converts it to an avif file named
+# path/to/foo.avif, maintaining the original file.
+#
+# This is necessary because the avifenc tool requires you to specify an
+# input file and an output file, but I almost always want to just use
+# the exact same filename and generate an avif alongside the original.
+#
+# Author: Rob Miller <r@robm.me.uk>
+
+set -eu -o pipefail
+
+IF="$1"
+OF="${1:r}.avif"
+
+if [ ! -f "$IF" ]; then
+  echo "File $IF not found" >&2
+  exit 1
+fi
+
+echo "Converting $IF to $OF"
+avifenc "$IF" "$OF"
