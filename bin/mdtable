@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+table = ARGF.read.chomp
+
+parse_row = ->(row) { row.gsub(/^\||\|$/, "").split("|").map(&:strip) }
+rows = table.each_line.map(&parse_row)
+
+# Normalise column count
+column_count = rows.map(&:length).max
+rows = rows.map { |row| (row + ([""] * column_count)).take(column_count) }
+
+# Find longest value for each column
+columns = 1.upto(column_count).map { |n| rows.map { |row| row[n - 1] } }
+column_widths = columns.map { |cells| cells.map(&:length).max }
+
+# Expand each cell to the right size for its column
+rows = rows.map do |row|
+  row.zip(column_widths).map do |value, length|
+    # If it's a header row, expand the dashes all the way across the cell
+    if value =~ /^[\s\-]{2,}$/
+      "-" * (length + 2)
+    # Otherwise, pad the string to the correct length with spaces around
+    else
+      " #{value.ljust(length)} "
+    end
+  end
+end
+
+# Display the table
+rows.each do |row|
+  puts "|#{row.join("|")}|"
+end
