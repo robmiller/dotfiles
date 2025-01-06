@@ -197,6 +197,8 @@ let g:syntastic_markdown_checkers = ['proselint']
 nnoremap <leader>– :s/\v(\s*-\s*\|\s*—\s*)/ – /g<CR>
 " Switch double quotes to single ones
 nnoremap <leader>“ :s/.*/\=tr(submatch(0), '“”', '‘’')<CR>:nohlsearch<CR>
+" Format a paragraph as a Markdown quote
+nnoremap <leader>> vipJI> “<ESC>gqip
 
 " Set .twig files to HTML Jinja syntax (it's what Twig is based on)
 au BufNewFile,BufRead *.twig set filetype=jinja
