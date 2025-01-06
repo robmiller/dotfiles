@@ -235,3 +235,6 @@
 [submodule "vim/bundle/vim-svelte"]
 	path = vim/bundle/vim-svelte
 	url = https://github.com/evanleck/vim-svelte.git
+[submodule "vim/bundle/solarized.nvim"]
+	path = vim/bundle/solarized.nvim
+	url = https://github.com/shaunsingh/solarized.nvim.git
