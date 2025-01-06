@@ -61,8 +61,8 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" In insert mode, double-tap J to enter command mode.
-inoremap jj <ESC>
+" In insert mode, double-tap K to enter command mode.
+inoremap kk <ESC>
 
 " Some mappings for tabs: Cmd + number selects a particular tab
 map <D-S-]> gt
