@@ -358,6 +358,8 @@ vmap <leader>a :Align<space>
 vmap <leader>A :Align<space>=<CR>
 " comma-H: align on =>
 vmap <leader>H :Align<space>=><CR>
+" comma-M: align a block of Markdown links
+vmap <leader>M :Align!<space>lp2P0<space>http<space>{%<CR>
 
 " comma-W: strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
